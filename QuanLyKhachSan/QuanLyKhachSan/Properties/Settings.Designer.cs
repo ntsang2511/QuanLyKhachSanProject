@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace QuanLyKhachSan.Properties
+namespace QuanLyQuanCafe.Properties
 {
 
 
