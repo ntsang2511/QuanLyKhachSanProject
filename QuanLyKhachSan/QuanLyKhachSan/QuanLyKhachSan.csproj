@@ -33,8 +33,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1001\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,11 +51,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\BaoCaoThongKeDAO.cs" />
+    <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="DAO\ExportToExcel.cs" />
+    <Compile Include="frmBaoCaoThongKe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBaoCaoThongKe.Designer.cs">
+      <DependentUpon>frmBaoCaoThongKe.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDangKyThuePhong.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmDangKyThuePhong.Designer.cs">
       <DependentUpon>frmDangKyThuePhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHoaDon.Designer.cs">
+      <DependentUpon>frmHoaDon.cs</DependentUpon>
     </Compile>
     <Compile Include="frmInHoaDon.cs">
       <SubType>Form</SubType>
@@ -84,6 +104,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmBaoCaoThongKe.resx">
+      <DependentUpon>frmBaoCaoThongKe.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDangKyThuePhong.resx">
       <DependentUpon>frmDangKyThuePhong.cs</DependentUpon>
     </EmbeddedResource>
@@ -111,6 +134,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -125,8 +149,30 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DAO\" />
     <Folder Include="DTO\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="images\capheden.jpg" />
+    <Content Include="images\caphesua.jpg" />
+    <Content Include="images\chanhday.jpg" />
+    <Content Include="images\chocolatedaxay.jpg" />
+    <Content Include="images\matchadaxay.jpg" />
+    <Content Include="images\nuoccam.jpg" />
+    <Content Include="images\sinhtobo.jpg" />
+    <Content Include="images\sinhtodua.jpg" />
+    <Content Include="images\sinhtomangcau.jpg" />
+    <Content Include="images\sinhtosapoche.jpg" />
+    <Content Include="images\sinhtoxoai.jpg" />
+    <Content Include="images\sodabacha.jpg" />
+    <Content Include="images\sodadau.jpg" />
+    <Content Include="images\sodavietquat.jpg" />
+    <Content Include="images\sodaxoai.jpg" />
+    <Content Include="images\thomep.jpg" />
+    <Content Include="images\tradao.jpg" />
+    <Content Include="images\tramangcau.jpg" />
+    <Content Include="images\travai.jpg" />
+    <Content Include="images\yaourtda.jpg" />
+    <Content Include="logo.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

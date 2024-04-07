@@ -9,8 +9,6 @@ using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using QuanLyQuanCafe.DAO;
-using QuanLyQuanCafe.DTO;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace QuanLyQuanCafe

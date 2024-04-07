@@ -1,0 +1,16 @@
+D:\GitHub\QuanLyKhachSanProject\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.AssemblyReference.cache
+D:\GitHub\QuanLyKhachSanProject\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.frmBaoCaoThongKe.resources
+D:\GitHub\QuanLyKhachSanProject\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.frmDangKyThuePhong.resources
+D:\GitHub\QuanLyKhachSanProject\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.frmInHoaDon.resources
+D:\GitHub\QuanLyKhachSanProject\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyQuanCafe.frmLogin.resources
+D:\GitHub\QuanLyKhachSanProject\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyQuanCafe.frmMain.resources
+D:\GitHub\QuanLyKhachSanProject\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.frmNhanVien.resources
+D:\GitHub\QuanLyKhachSanProject\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.frmSuDungDichVu.resources
+D:\GitHub\QuanLyKhachSanProject\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.Properties.Resources.resources
+D:\GitHub\QuanLyKhachSanProject\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.GenerateResource.cache
+D:\GitHub\QuanLyKhachSanProject\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.CoreCompileInputs.cache
+D:\GitHub\QuanLyKhachSanProject\QuanLyKhachSan\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.exe.config
+D:\GitHub\QuanLyKhachSanProject\QuanLyKhachSan\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.exe
+D:\GitHub\QuanLyKhachSanProject\QuanLyKhachSan\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.pdb
+D:\GitHub\QuanLyKhachSanProject\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.exe
+D:\GitHub\QuanLyKhachSanProject\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.pdb
