@@ -14,3 +14,20 @@ D:\GitHub\QuanLyKhachSanProject\QuanLyKhachSan\QuanLyKhachSan\bin\Debug\QuanLyKh
 D:\GitHub\QuanLyKhachSanProject\QuanLyKhachSan\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.pdb
 D:\GitHub\QuanLyKhachSanProject\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.exe
 D:\GitHub\QuanLyKhachSanProject\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.pdb
+C:\Users\Sang\OneDrive\Tài liệu\ProjectStudy\QuanLyKhachSanProject\QuanLyKhachSan\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.exe.config
+C:\Users\Sang\OneDrive\Tài liệu\ProjectStudy\QuanLyKhachSanProject\QuanLyKhachSan\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.exe
+C:\Users\Sang\OneDrive\Tài liệu\ProjectStudy\QuanLyKhachSanProject\QuanLyKhachSan\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.pdb
+C:\Users\Sang\OneDrive\Tài liệu\ProjectStudy\QuanLyKhachSanProject\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.AssemblyReference.cache
+C:\Users\Sang\OneDrive\Tài liệu\ProjectStudy\QuanLyKhachSanProject\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.SuggestedBindingRedirects.cache
+C:\Users\Sang\OneDrive\Tài liệu\ProjectStudy\QuanLyKhachSanProject\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.frmBaoCaoThongKe.resources
+C:\Users\Sang\OneDrive\Tài liệu\ProjectStudy\QuanLyKhachSanProject\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.frmDangKyThuePhong.resources
+C:\Users\Sang\OneDrive\Tài liệu\ProjectStudy\QuanLyKhachSanProject\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.frmInHoaDon.resources
+C:\Users\Sang\OneDrive\Tài liệu\ProjectStudy\QuanLyKhachSanProject\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyQuanCafe.frmLogin.resources
+C:\Users\Sang\OneDrive\Tài liệu\ProjectStudy\QuanLyKhachSanProject\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyQuanCafe.frmMain.resources
+C:\Users\Sang\OneDrive\Tài liệu\ProjectStudy\QuanLyKhachSanProject\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.frmNhanVien.resources
+C:\Users\Sang\OneDrive\Tài liệu\ProjectStudy\QuanLyKhachSanProject\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.frmSuDungDichVu.resources
+C:\Users\Sang\OneDrive\Tài liệu\ProjectStudy\QuanLyKhachSanProject\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.Properties.Resources.resources
+C:\Users\Sang\OneDrive\Tài liệu\ProjectStudy\QuanLyKhachSanProject\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.GenerateResource.cache
+C:\Users\Sang\OneDrive\Tài liệu\ProjectStudy\QuanLyKhachSanProject\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.CoreCompileInputs.cache
+C:\Users\Sang\OneDrive\Tài liệu\ProjectStudy\QuanLyKhachSanProject\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.exe
+C:\Users\Sang\OneDrive\Tài liệu\ProjectStudy\QuanLyKhachSanProject\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.pdb
