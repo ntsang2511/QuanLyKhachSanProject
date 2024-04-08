@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyKhachSan;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -188,6 +189,38 @@ namespace QuanLyQuanCafe
             txtTienThua.Text = "0";
             GiamGia.Value = 0;
         }
+
         #endregion
+
+        void loadfrmNhanVien(String tenTo)
+        {
+            frmNhanVien frm = new frmNhanVien(tenTo);
+            frm.ShowDialog();
+        }
+        private void btnGiatLa_Click(object sender, EventArgs e)
+        {
+            loadfrmNhanVien("2");
+        }
+
+        private void btnDonPhong_Click(object sender, EventArgs e)
+        {
+            loadfrmNhanVien("1");
+
+        }
+
+        private void btnXe_Click(object sender, EventArgs e)
+        {
+            loadfrmNhanVien("3");
+        }
+
+        private void btnTongDai_Click(object sender, EventArgs e)
+        {
+            loadfrmNhanVien("4");
+        }
+
+        private void btnBep_Click(object sender, EventArgs e)
+        {
+            loadfrmNhanVien("5");
+        }
     }
 }
