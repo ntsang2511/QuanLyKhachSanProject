@@ -31,3 +31,4 @@ C:\Users\Sang\OneDrive\Tài liệu\ProjectStudy\QuanLyKhachSanProject\QuanLyKh
 C:\Users\Sang\OneDrive\Tài liệu\ProjectStudy\QuanLyKhachSanProject\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.CoreCompileInputs.cache
 C:\Users\Sang\OneDrive\Tài liệu\ProjectStudy\QuanLyKhachSanProject\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.exe
 C:\Users\Sang\OneDrive\Tài liệu\ProjectStudy\QuanLyKhachSanProject\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.pdb
+C:\Users\Sang\OneDrive\Tài liệu\ProjectStudy\QuanLyKhachSanProject\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.frmQuanLyTaiKhoan.resources

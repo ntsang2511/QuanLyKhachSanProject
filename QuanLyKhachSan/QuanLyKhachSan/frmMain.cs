@@ -222,5 +222,11 @@ namespace QuanLyQuanCafe
         {
             loadfrmNhanVien("5");
         }
+
+        private void accountToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmQuanLyTaiKhoan frmQuanLy = new frmQuanLyTaiKhoan();
+            frmQuanLy.ShowDialog();
+        }
     }
 }
