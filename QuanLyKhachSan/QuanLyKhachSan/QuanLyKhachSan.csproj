@@ -54,6 +54,8 @@
     <Compile Include="DAO\BaoCaoThongKeDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="DAO\ExportToExcel.cs" />
+    <Compile Include="DAO\PhongDAO.cs" />
+    <Compile Include="DTO\Phong.cs" />
     <Compile Include="frmBaoCaoThongKe.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,9 +159,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DTO\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="images\capheden.jpg" />
     <Content Include="images\caphesua.jpg" />

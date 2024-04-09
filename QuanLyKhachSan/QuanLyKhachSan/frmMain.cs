@@ -1,4 +1,6 @@
 ﻿using QuanLyKhachSan;
+using QuanLyKhachSan.DAO;
+using QuanLyKhachSan.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -97,6 +99,8 @@ namespace QuanLyQuanCafe
             lblGia14.Text = string.Empty;
             lblGia15.Text = string.Empty;
         }
+
+        //NOT USE STT
         private void SetRadiobuttonMenu()
         {
             rbSizeM1.Checked = true;
@@ -145,6 +149,7 @@ namespace QuanLyQuanCafe
             rbSizeL14.Enabled = true;
             rbSizeL15.Enabled = true;
         }
+        //NOT USE END
         private void SetVisiblePhong()
         {
             btnPhong1.Visible = false;
@@ -190,6 +195,145 @@ namespace QuanLyQuanCafe
             GiamGia.Value = 0;
         }
 
+        private void ShowPhong()
+        {
+            SetEmptyPhong();
+            SetVisiblePhong();
+            List<Phong> listPhong = PhongDAO.Instance.GetListPhong();
+            if (listPhong.Count > 0)
+            {
+                int count = 1;
+                foreach (Phong item in listPhong)
+                {
+                    if (count > 15)
+                    {
+                        break;
+                    }
+                    SetItemPhong(item, count);
+                    count++;
+                }
+                btnPrevPhong.Visible = false;
+                btnNextPhong.Visible = false;
+                if (listPhong.Count > 15)
+                {
+                    btnPrevPhong.Visible = true;
+                    btnPrevPhong.Enabled = false;
+                    btnNextPhong.Visible = true;
+                    btnNextPhong.Enabled = true;
+                }
+            }
+        }
+
+        private void SetItemPhong(Phong tb, int id)
+        {
+            Color color = Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            string stt = "";
+            if (tb.TinhTrang == 0)
+            {
+                stt = "Trống";
+                color = Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            }
+            else if (tb.TinhTrang == 1)
+            {
+                stt = "Đang sử dụng";
+                color = Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            }
+            switch (id)
+            {
+                case 1:
+                    btnPhong1.Visible = true;
+                    btnPhong1.BackColor = color;
+                    btnPhong1.Text = tb.MaPhong + Environment.NewLine + stt;
+                    btnPhong1.Tag = tb;
+                    break;
+                case 2:
+                    btnPhong2.Visible = true;
+                    btnPhong2.BackColor = color;
+                    btnPhong2.Text = tb.MaPhong + Environment.NewLine + stt;
+                    btnPhong2.Tag = tb;
+                    break;
+                case 3:
+                    btnPhong3.Visible = true;
+                    btnPhong3.BackColor = color;
+                    btnPhong3.Text = tb.MaPhong + Environment.NewLine + stt;
+                    btnPhong3.Tag = tb;
+                    break;
+                case 4:
+                    btnPhong4.Visible = true;
+                    btnPhong4.BackColor = color;
+                    btnPhong4.Text = tb.MaPhong + Environment.NewLine + stt;
+                    btnPhong4.Tag = tb;
+                    break;
+                case 5:
+                    btnPhong5.Visible = true;
+                    btnPhong5.BackColor = color;
+                    btnPhong5.Text = tb.MaPhong + Environment.NewLine + stt;
+                    btnPhong5.Tag = tb;
+                    break;
+                case 6:
+                    btnPhong6.Visible = true;
+                    btnPhong6.BackColor = color;
+                    btnPhong6.Text = tb.MaPhong + Environment.NewLine + stt;
+                    btnPhong6.Tag = tb;
+                    break;
+                case 7:
+                    btnPhong7.Visible = true;
+                    btnPhong7.BackColor = color;
+                    btnPhong7.Text = tb.MaPhong + Environment.NewLine + stt;
+                    btnPhong7.Tag = tb;
+                    break;
+                case 8:
+                    btnPhong8.Visible = true;
+                    btnPhong8.BackColor = color;
+                    btnPhong8.Text = tb.MaPhong + Environment.NewLine + stt;
+                    btnPhong8.Tag = tb;
+                    break;
+                case 9:
+                    btnPhong9.Visible = true;
+                    btnPhong9.BackColor = color;
+                    btnPhong9.Text = tb.MaPhong + Environment.NewLine + stt;
+                    btnPhong9.Tag = tb;
+                    break;
+                case 10:
+                    btnPhong10.Visible = true;
+                    btnPhong10.BackColor = color;
+                    btnPhong10.Text = tb.MaPhong + Environment.NewLine + stt;
+                    btnPhong10.Tag = tb;
+                    break;
+                case 11:
+                    btnPhong11.Visible = true;
+                    btnPhong11.BackColor = color;
+                    btnPhong11.Text = tb.MaPhong + Environment.NewLine + stt;
+                    btnPhong11.Tag = tb;
+                    break;
+                case 12:
+                    btnPhong12.Visible = true;
+                    btnPhong12.BackColor = color;
+                    btnPhong12.Text = tb.MaPhong + Environment.NewLine + stt;
+                    btnPhong12.Tag = tb;
+                    break;
+                case 13:
+                    btnPhong13.Visible = true;
+                    btnPhong13.BackColor = color;
+                    btnPhong13.Text = tb.MaPhong + Environment.NewLine + stt;
+                    btnPhong13.Tag = tb;
+                    break;
+                case 14:
+                    btnPhong14.Visible = true;
+                    btnPhong14.BackColor = color;
+                    btnPhong14.Text = tb.MaPhong + Environment.NewLine + stt;
+                    btnPhong14.Tag = tb;
+                    break;
+                case 15:
+                    btnPhong15.Visible = true;
+                    btnPhong15.BackColor = color;
+                    btnPhong15.Text = tb.MaPhong + Environment.NewLine + stt;
+                    btnPhong15.Tag = tb;
+                    break;
+
+            }
+        }
+
         #endregion
 
         void loadfrmNhanVien(String tenTo)
@@ -227,6 +371,35 @@ namespace QuanLyQuanCafe
         {
             frmQuanLyTaiKhoan frmQuanLy = new frmQuanLyTaiKhoan();
             frmQuanLy.ShowDialog();
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            this.Activate();
+            ShowPhong();
+        }
+
+        private void btnPhong_Click(object sender, EventArgs e)
+        {
+            Phong phong = ((System.Windows.Forms.Button)sender).Tag as Phong;
+            if (phong.TinhTrang == 1)
+            {
+                lblPhong.Text = phong.MaPhong;
+                tcMenu.SelectedTab = tpMenu;
+
+                lviHoaDon.Items.Clear();
+                string maPhong = phong.MaPhong;
+
+                //Get thong tin dat phong
+                //...
+                lviHoaDon.Tag = phong;
+            }
+            else
+            {
+                MessageBox.Show("Chọn phòng đang sử dụng để thêm dịch vụ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            txtKhachDua.Text = "0";
         }
     }
 }

@@ -60,6 +60,7 @@
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.accountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.datphongToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thanhToanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dangXuatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -178,8 +179,8 @@
             this.rbSizeL1 = new System.Windows.Forms.RadioButton();
             this.lblID1 = new System.Windows.Forms.Label();
             this.tpPhong = new System.Windows.Forms.TabPage();
-            this.btnNextTable = new System.Windows.Forms.Button();
-            this.btnPrevTable = new System.Windows.Forms.Button();
+            this.btnNextPhong = new System.Windows.Forms.Button();
+            this.btnPrevPhong = new System.Windows.Forms.Button();
             this.btnPhong15 = new System.Windows.Forms.Button();
             this.btnPhong14 = new System.Windows.Forms.Button();
             this.btnPhong13 = new System.Windows.Forms.Button();
@@ -211,7 +212,6 @@
             this.lblIDPhong2 = new System.Windows.Forms.Label();
             this.lblIDPhong1 = new System.Windows.Forms.Label();
             this.tcMenu = new System.Windows.Forms.TabControl();
-            this.accountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnHoaDon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GiamGia)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -305,7 +305,7 @@
             this.cmbPhongSuDung.FormattingEnabled = true;
             this.cmbPhongSuDung.Location = new System.Drawing.Point(201, 752);
             this.cmbPhongSuDung.Name = "cmbPhongSuDung";
-            this.cmbPhongSuDung.Size = new System.Drawing.Size(154, 32);
+            this.cmbPhongSuDung.Size = new System.Drawing.Size(154, 26);
             this.cmbPhongSuDung.TabIndex = 36;
             this.cmbPhongSuDung.Visible = false;
             // 
@@ -370,14 +370,14 @@
             this.txtTienThua.Enabled = false;
             this.txtTienThua.Location = new System.Drawing.Point(484, 664);
             this.txtTienThua.Name = "txtTienThua";
-            this.txtTienThua.Size = new System.Drawing.Size(154, 31);
+            this.txtTienThua.Size = new System.Drawing.Size(154, 26);
             this.txtTienThua.TabIndex = 27;
             // 
             // txtKhachDua
             // 
             this.txtKhachDua.Location = new System.Drawing.Point(484, 600);
             this.txtKhachDua.Name = "txtKhachDua";
-            this.txtKhachDua.Size = new System.Drawing.Size(154, 31);
+            this.txtKhachDua.Size = new System.Drawing.Size(154, 26);
             this.txtKhachDua.TabIndex = 26;
             // 
             // txtTongTien
@@ -385,7 +385,7 @@
             this.txtTongTien.Enabled = false;
             this.txtTongTien.Location = new System.Drawing.Point(484, 568);
             this.txtTongTien.Name = "txtTongTien";
-            this.txtTongTien.Size = new System.Drawing.Size(154, 31);
+            this.txtTongTien.Size = new System.Drawing.Size(154, 26);
             this.txtTongTien.TabIndex = 25;
             // 
             // label2
@@ -410,7 +410,7 @@
             // 
             this.GiamGia.Location = new System.Drawing.Point(484, 632);
             this.GiamGia.Name = "GiamGia";
-            this.GiamGia.Size = new System.Drawing.Size(54, 31);
+            this.GiamGia.Size = new System.Drawing.Size(54, 26);
             this.GiamGia.TabIndex = 19;
             // 
             // cmbPhongTrong
@@ -418,7 +418,7 @@
             this.cmbPhongTrong.FormattingEnabled = true;
             this.cmbPhongTrong.Location = new System.Drawing.Point(201, 626);
             this.cmbPhongTrong.Name = "cmbPhongTrong";
-            this.cmbPhongTrong.Size = new System.Drawing.Size(154, 32);
+            this.cmbPhongTrong.Size = new System.Drawing.Size(154, 26);
             this.cmbPhongTrong.TabIndex = 16;
             // 
             // btnChuyenPhong
@@ -455,7 +455,7 @@
             this.label31.Font = new System.Drawing.Font("Comic Sans MS", 12F);
             this.label31.Location = new System.Drawing.Point(7, 10);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(178, 28);
+            this.label31.Size = new System.Drawing.Size(139, 23);
             this.label31.TabIndex = 2;
             this.label31.Text = "Thông tin hóa đơn";
             // 
@@ -529,7 +529,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.menuStrip1.Size = new System.Drawing.Size(1752, 32);
+            this.menuStrip1.Size = new System.Drawing.Size(1752, 27);
             this.menuStrip1.TabIndex = 12;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -539,25 +539,32 @@
             this.accountToolStripMenuItem});
             this.adminToolStripMenuItem.Font = new System.Drawing.Font("Comic Sans MS", 10F);
             this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
-            this.adminToolStripMenuItem.Size = new System.Drawing.Size(72, 28);
+            this.adminToolStripMenuItem.Size = new System.Drawing.Size(60, 23);
             this.adminToolStripMenuItem.Text = "Admin";
+            // 
+            // accountToolStripMenuItem
+            // 
+            this.accountToolStripMenuItem.Name = "accountToolStripMenuItem";
+            this.accountToolStripMenuItem.Size = new System.Drawing.Size(129, 24);
+            this.accountToolStripMenuItem.Text = "Account";
+            this.accountToolStripMenuItem.Click += new System.EventHandler(this.accountToolStripMenuItem_Click);
             // 
             // datphongToolStripMenuItem
             // 
             this.datphongToolStripMenuItem.Name = "datphongToolStripMenuItem";
-            this.datphongToolStripMenuItem.Size = new System.Drawing.Size(104, 28);
+            this.datphongToolStripMenuItem.Size = new System.Drawing.Size(85, 23);
             this.datphongToolStripMenuItem.Text = "Đặt phòng";
             // 
             // thanhToanToolStripMenuItem
             // 
             this.thanhToanToolStripMenuItem.Name = "thanhToanToolStripMenuItem";
-            this.thanhToanToolStripMenuItem.Size = new System.Drawing.Size(117, 28);
+            this.thanhToanToolStripMenuItem.Size = new System.Drawing.Size(94, 23);
             this.thanhToanToolStripMenuItem.Text = "Thanh Toán";
             // 
             // dangXuatToolStripMenuItem
             // 
             this.dangXuatToolStripMenuItem.Name = "dangXuatToolStripMenuItem";
-            this.dangXuatToolStripMenuItem.Size = new System.Drawing.Size(104, 28);
+            this.dangXuatToolStripMenuItem.Size = new System.Drawing.Size(86, 23);
             this.dangXuatToolStripMenuItem.Text = "Đăng xuất";
             // 
             // tpNhanViec
@@ -568,10 +575,10 @@
             this.tpNhanViec.Controls.Add(this.btnDonPhong);
             this.tpNhanViec.Controls.Add(this.btnXe);
             this.tpNhanViec.Controls.Add(this.btnGiatLa);
-            this.tpNhanViec.Location = new System.Drawing.Point(4, 33);
+            this.tpNhanViec.Location = new System.Drawing.Point(4, 27);
             this.tpNhanViec.Name = "tpNhanViec";
             this.tpNhanViec.Padding = new System.Windows.Forms.Padding(3);
-            this.tpNhanViec.Size = new System.Drawing.Size(1110, 782);
+            this.tpNhanViec.Size = new System.Drawing.Size(1110, 788);
             this.tpNhanViec.TabIndex = 3;
             this.tpNhanViec.Text = "Nhận việc";
             // 
@@ -645,12 +652,12 @@
             this.tpMenu.Controls.Add(this.pnMenu3);
             this.tpMenu.Controls.Add(this.pnMenu2);
             this.tpMenu.Controls.Add(this.pnMenu1);
-            this.tpMenu.Location = new System.Drawing.Point(4, 33);
+            this.tpMenu.Location = new System.Drawing.Point(4, 27);
             this.tpMenu.Name = "tpMenu";
             this.tpMenu.Padding = new System.Windows.Forms.Padding(3);
-            this.tpMenu.Size = new System.Drawing.Size(1110, 782);
+            this.tpMenu.Size = new System.Drawing.Size(1110, 788);
             this.tpMenu.TabIndex = 1;
-            this.tpMenu.Text = "Menu";
+            this.tpMenu.Text = "Menu dịch vụ";
             // 
             // btnNextMenu
             // 
@@ -717,11 +724,12 @@
             this.rbSizeM15.Font = new System.Drawing.Font("Comic Sans MS", 10F);
             this.rbSizeM15.Location = new System.Drawing.Point(125, 216);
             this.rbSizeM15.Name = "rbSizeM15";
-            this.rbSizeM15.Size = new System.Drawing.Size(46, 28);
+            this.rbSizeM15.Size = new System.Drawing.Size(39, 23);
             this.rbSizeM15.TabIndex = 75;
             this.rbSizeM15.TabStop = true;
             this.rbSizeM15.Text = "M";
             this.rbSizeM15.UseVisualStyleBackColor = true;
+            this.rbSizeM15.Visible = false;
             // 
             // rbSizeL15
             // 
@@ -729,10 +737,11 @@
             this.rbSizeL15.Font = new System.Drawing.Font("Comic Sans MS", 10F);
             this.rbSizeL15.Location = new System.Drawing.Point(169, 216);
             this.rbSizeL15.Name = "rbSizeL15";
-            this.rbSizeL15.Size = new System.Drawing.Size(40, 28);
+            this.rbSizeL15.Size = new System.Drawing.Size(35, 23);
             this.rbSizeL15.TabIndex = 76;
             this.rbSizeL15.Text = "L";
             this.rbSizeL15.UseVisualStyleBackColor = true;
+            this.rbSizeL15.Visible = false;
             // 
             // lblID15
             // 
@@ -740,7 +749,7 @@
             this.lblID15.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblID15.Location = new System.Drawing.Point(179, 199);
             this.lblID15.Name = "lblID15";
-            this.lblID15.Size = new System.Drawing.Size(24, 24);
+            this.lblID15.Size = new System.Drawing.Size(20, 18);
             this.lblID15.TabIndex = 78;
             this.lblID15.Text = "id";
             this.lblID15.Visible = false;
@@ -792,11 +801,12 @@
             this.rbSizeM14.Font = new System.Drawing.Font("Comic Sans MS", 10F);
             this.rbSizeM14.Location = new System.Drawing.Point(125, 216);
             this.rbSizeM14.Name = "rbSizeM14";
-            this.rbSizeM14.Size = new System.Drawing.Size(46, 28);
+            this.rbSizeM14.Size = new System.Drawing.Size(39, 23);
             this.rbSizeM14.TabIndex = 75;
             this.rbSizeM14.TabStop = true;
             this.rbSizeM14.Text = "M";
             this.rbSizeM14.UseVisualStyleBackColor = true;
+            this.rbSizeM14.Visible = false;
             // 
             // rbSizeL14
             // 
@@ -804,10 +814,11 @@
             this.rbSizeL14.Font = new System.Drawing.Font("Comic Sans MS", 10F);
             this.rbSizeL14.Location = new System.Drawing.Point(169, 216);
             this.rbSizeL14.Name = "rbSizeL14";
-            this.rbSizeL14.Size = new System.Drawing.Size(40, 28);
+            this.rbSizeL14.Size = new System.Drawing.Size(35, 23);
             this.rbSizeL14.TabIndex = 76;
             this.rbSizeL14.Text = "L";
             this.rbSizeL14.UseVisualStyleBackColor = true;
+            this.rbSizeL14.Visible = false;
             // 
             // lblID14
             // 
@@ -815,7 +826,7 @@
             this.lblID14.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblID14.Location = new System.Drawing.Point(180, 199);
             this.lblID14.Name = "lblID14";
-            this.lblID14.Size = new System.Drawing.Size(24, 24);
+            this.lblID14.Size = new System.Drawing.Size(20, 18);
             this.lblID14.TabIndex = 78;
             this.lblID14.Text = "id";
             this.lblID14.Visible = false;
@@ -867,11 +878,12 @@
             this.rbSizeM13.Font = new System.Drawing.Font("Comic Sans MS", 10F);
             this.rbSizeM13.Location = new System.Drawing.Point(125, 216);
             this.rbSizeM13.Name = "rbSizeM13";
-            this.rbSizeM13.Size = new System.Drawing.Size(46, 28);
+            this.rbSizeM13.Size = new System.Drawing.Size(39, 23);
             this.rbSizeM13.TabIndex = 75;
             this.rbSizeM13.TabStop = true;
             this.rbSizeM13.Text = "M";
             this.rbSizeM13.UseVisualStyleBackColor = true;
+            this.rbSizeM13.Visible = false;
             // 
             // rbSizeL13
             // 
@@ -879,10 +891,11 @@
             this.rbSizeL13.Font = new System.Drawing.Font("Comic Sans MS", 10F);
             this.rbSizeL13.Location = new System.Drawing.Point(169, 216);
             this.rbSizeL13.Name = "rbSizeL13";
-            this.rbSizeL13.Size = new System.Drawing.Size(40, 28);
+            this.rbSizeL13.Size = new System.Drawing.Size(35, 23);
             this.rbSizeL13.TabIndex = 76;
             this.rbSizeL13.Text = "L";
             this.rbSizeL13.UseVisualStyleBackColor = true;
+            this.rbSizeL13.Visible = false;
             // 
             // lblID13
             // 
@@ -890,7 +903,7 @@
             this.lblID13.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblID13.Location = new System.Drawing.Point(180, 199);
             this.lblID13.Name = "lblID13";
-            this.lblID13.Size = new System.Drawing.Size(24, 24);
+            this.lblID13.Size = new System.Drawing.Size(20, 18);
             this.lblID13.TabIndex = 78;
             this.lblID13.Text = "id";
             this.lblID13.Visible = false;
@@ -942,11 +955,12 @@
             this.rbSizeM12.Font = new System.Drawing.Font("Comic Sans MS", 10F);
             this.rbSizeM12.Location = new System.Drawing.Point(125, 216);
             this.rbSizeM12.Name = "rbSizeM12";
-            this.rbSizeM12.Size = new System.Drawing.Size(46, 28);
+            this.rbSizeM12.Size = new System.Drawing.Size(39, 23);
             this.rbSizeM12.TabIndex = 75;
             this.rbSizeM12.TabStop = true;
             this.rbSizeM12.Text = "M";
             this.rbSizeM12.UseVisualStyleBackColor = true;
+            this.rbSizeM12.Visible = false;
             // 
             // rbSizeL12
             // 
@@ -954,10 +968,11 @@
             this.rbSizeL12.Font = new System.Drawing.Font("Comic Sans MS", 10F);
             this.rbSizeL12.Location = new System.Drawing.Point(169, 216);
             this.rbSizeL12.Name = "rbSizeL12";
-            this.rbSizeL12.Size = new System.Drawing.Size(40, 28);
+            this.rbSizeL12.Size = new System.Drawing.Size(35, 23);
             this.rbSizeL12.TabIndex = 76;
             this.rbSizeL12.Text = "L";
             this.rbSizeL12.UseVisualStyleBackColor = true;
+            this.rbSizeL12.Visible = false;
             // 
             // lblID12
             // 
@@ -965,7 +980,7 @@
             this.lblID12.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblID12.Location = new System.Drawing.Point(179, 199);
             this.lblID12.Name = "lblID12";
-            this.lblID12.Size = new System.Drawing.Size(24, 24);
+            this.lblID12.Size = new System.Drawing.Size(20, 18);
             this.lblID12.TabIndex = 78;
             this.lblID12.Text = "id";
             this.lblID12.Visible = false;
@@ -1017,11 +1032,12 @@
             this.rbSizeM11.Font = new System.Drawing.Font("Comic Sans MS", 10F);
             this.rbSizeM11.Location = new System.Drawing.Point(125, 216);
             this.rbSizeM11.Name = "rbSizeM11";
-            this.rbSizeM11.Size = new System.Drawing.Size(46, 28);
+            this.rbSizeM11.Size = new System.Drawing.Size(39, 23);
             this.rbSizeM11.TabIndex = 75;
             this.rbSizeM11.TabStop = true;
             this.rbSizeM11.Text = "M";
             this.rbSizeM11.UseVisualStyleBackColor = true;
+            this.rbSizeM11.Visible = false;
             // 
             // rbSizeL11
             // 
@@ -1029,10 +1045,11 @@
             this.rbSizeL11.Font = new System.Drawing.Font("Comic Sans MS", 10F);
             this.rbSizeL11.Location = new System.Drawing.Point(169, 216);
             this.rbSizeL11.Name = "rbSizeL11";
-            this.rbSizeL11.Size = new System.Drawing.Size(40, 28);
+            this.rbSizeL11.Size = new System.Drawing.Size(35, 23);
             this.rbSizeL11.TabIndex = 76;
             this.rbSizeL11.Text = "L";
             this.rbSizeL11.UseVisualStyleBackColor = true;
+            this.rbSizeL11.Visible = false;
             // 
             // lblID11
             // 
@@ -1040,7 +1057,7 @@
             this.lblID11.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblID11.Location = new System.Drawing.Point(179, 199);
             this.lblID11.Name = "lblID11";
-            this.lblID11.Size = new System.Drawing.Size(24, 24);
+            this.lblID11.Size = new System.Drawing.Size(20, 18);
             this.lblID11.TabIndex = 78;
             this.lblID11.Text = "id";
             this.lblID11.Visible = false;
@@ -1092,11 +1109,12 @@
             this.rbSizeM10.Font = new System.Drawing.Font("Comic Sans MS", 10F);
             this.rbSizeM10.Location = new System.Drawing.Point(125, 216);
             this.rbSizeM10.Name = "rbSizeM10";
-            this.rbSizeM10.Size = new System.Drawing.Size(46, 28);
+            this.rbSizeM10.Size = new System.Drawing.Size(39, 23);
             this.rbSizeM10.TabIndex = 75;
             this.rbSizeM10.TabStop = true;
             this.rbSizeM10.Text = "M";
             this.rbSizeM10.UseVisualStyleBackColor = true;
+            this.rbSizeM10.Visible = false;
             // 
             // rbSizeL10
             // 
@@ -1104,10 +1122,11 @@
             this.rbSizeL10.Font = new System.Drawing.Font("Comic Sans MS", 10F);
             this.rbSizeL10.Location = new System.Drawing.Point(169, 216);
             this.rbSizeL10.Name = "rbSizeL10";
-            this.rbSizeL10.Size = new System.Drawing.Size(40, 28);
+            this.rbSizeL10.Size = new System.Drawing.Size(35, 23);
             this.rbSizeL10.TabIndex = 76;
             this.rbSizeL10.Text = "L";
             this.rbSizeL10.UseVisualStyleBackColor = true;
+            this.rbSizeL10.Visible = false;
             // 
             // lblID10
             // 
@@ -1115,7 +1134,7 @@
             this.lblID10.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblID10.Location = new System.Drawing.Point(179, 196);
             this.lblID10.Name = "lblID10";
-            this.lblID10.Size = new System.Drawing.Size(24, 24);
+            this.lblID10.Size = new System.Drawing.Size(20, 18);
             this.lblID10.TabIndex = 78;
             this.lblID10.Text = "id";
             this.lblID10.Visible = false;
@@ -1167,11 +1186,12 @@
             this.rbSizeM9.Font = new System.Drawing.Font("Comic Sans MS", 10F);
             this.rbSizeM9.Location = new System.Drawing.Point(125, 216);
             this.rbSizeM9.Name = "rbSizeM9";
-            this.rbSizeM9.Size = new System.Drawing.Size(46, 28);
+            this.rbSizeM9.Size = new System.Drawing.Size(39, 23);
             this.rbSizeM9.TabIndex = 75;
             this.rbSizeM9.TabStop = true;
             this.rbSizeM9.Text = "M";
             this.rbSizeM9.UseVisualStyleBackColor = true;
+            this.rbSizeM9.Visible = false;
             // 
             // rbSizeL9
             // 
@@ -1179,10 +1199,11 @@
             this.rbSizeL9.Font = new System.Drawing.Font("Comic Sans MS", 10F);
             this.rbSizeL9.Location = new System.Drawing.Point(169, 216);
             this.rbSizeL9.Name = "rbSizeL9";
-            this.rbSizeL9.Size = new System.Drawing.Size(40, 28);
+            this.rbSizeL9.Size = new System.Drawing.Size(35, 23);
             this.rbSizeL9.TabIndex = 76;
             this.rbSizeL9.Text = "L";
             this.rbSizeL9.UseVisualStyleBackColor = true;
+            this.rbSizeL9.Visible = false;
             // 
             // lblID9
             // 
@@ -1190,7 +1211,7 @@
             this.lblID9.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblID9.Location = new System.Drawing.Point(179, 199);
             this.lblID9.Name = "lblID9";
-            this.lblID9.Size = new System.Drawing.Size(24, 24);
+            this.lblID9.Size = new System.Drawing.Size(20, 18);
             this.lblID9.TabIndex = 78;
             this.lblID9.Text = "id";
             this.lblID9.Visible = false;
@@ -1242,11 +1263,12 @@
             this.rbSizeM8.Font = new System.Drawing.Font("Comic Sans MS", 10F);
             this.rbSizeM8.Location = new System.Drawing.Point(125, 216);
             this.rbSizeM8.Name = "rbSizeM8";
-            this.rbSizeM8.Size = new System.Drawing.Size(46, 28);
+            this.rbSizeM8.Size = new System.Drawing.Size(39, 23);
             this.rbSizeM8.TabIndex = 75;
             this.rbSizeM8.TabStop = true;
             this.rbSizeM8.Text = "M";
             this.rbSizeM8.UseVisualStyleBackColor = true;
+            this.rbSizeM8.Visible = false;
             // 
             // rbSizeL8
             // 
@@ -1254,10 +1276,11 @@
             this.rbSizeL8.Font = new System.Drawing.Font("Comic Sans MS", 10F);
             this.rbSizeL8.Location = new System.Drawing.Point(169, 216);
             this.rbSizeL8.Name = "rbSizeL8";
-            this.rbSizeL8.Size = new System.Drawing.Size(40, 28);
+            this.rbSizeL8.Size = new System.Drawing.Size(35, 23);
             this.rbSizeL8.TabIndex = 76;
             this.rbSizeL8.Text = "L";
             this.rbSizeL8.UseVisualStyleBackColor = true;
+            this.rbSizeL8.Visible = false;
             // 
             // lblID8
             // 
@@ -1265,7 +1288,7 @@
             this.lblID8.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblID8.Location = new System.Drawing.Point(179, 199);
             this.lblID8.Name = "lblID8";
-            this.lblID8.Size = new System.Drawing.Size(24, 24);
+            this.lblID8.Size = new System.Drawing.Size(20, 18);
             this.lblID8.TabIndex = 78;
             this.lblID8.Text = "id";
             this.lblID8.Visible = false;
@@ -1317,11 +1340,12 @@
             this.rbSizeM7.Font = new System.Drawing.Font("Comic Sans MS", 10F);
             this.rbSizeM7.Location = new System.Drawing.Point(125, 216);
             this.rbSizeM7.Name = "rbSizeM7";
-            this.rbSizeM7.Size = new System.Drawing.Size(46, 28);
+            this.rbSizeM7.Size = new System.Drawing.Size(39, 23);
             this.rbSizeM7.TabIndex = 75;
             this.rbSizeM7.TabStop = true;
             this.rbSizeM7.Text = "M";
             this.rbSizeM7.UseVisualStyleBackColor = true;
+            this.rbSizeM7.Visible = false;
             // 
             // rbSizeL7
             // 
@@ -1329,10 +1353,11 @@
             this.rbSizeL7.Font = new System.Drawing.Font("Comic Sans MS", 10F);
             this.rbSizeL7.Location = new System.Drawing.Point(169, 216);
             this.rbSizeL7.Name = "rbSizeL7";
-            this.rbSizeL7.Size = new System.Drawing.Size(40, 28);
+            this.rbSizeL7.Size = new System.Drawing.Size(35, 23);
             this.rbSizeL7.TabIndex = 76;
             this.rbSizeL7.Text = "L";
             this.rbSizeL7.UseVisualStyleBackColor = true;
+            this.rbSizeL7.Visible = false;
             // 
             // lblID7
             // 
@@ -1340,7 +1365,7 @@
             this.lblID7.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblID7.Location = new System.Drawing.Point(180, 199);
             this.lblID7.Name = "lblID7";
-            this.lblID7.Size = new System.Drawing.Size(24, 24);
+            this.lblID7.Size = new System.Drawing.Size(20, 18);
             this.lblID7.TabIndex = 78;
             this.lblID7.Text = "id";
             this.lblID7.Visible = false;
@@ -1392,11 +1417,12 @@
             this.rbSizeM6.Font = new System.Drawing.Font("Comic Sans MS", 10F);
             this.rbSizeM6.Location = new System.Drawing.Point(125, 216);
             this.rbSizeM6.Name = "rbSizeM6";
-            this.rbSizeM6.Size = new System.Drawing.Size(46, 28);
+            this.rbSizeM6.Size = new System.Drawing.Size(39, 23);
             this.rbSizeM6.TabIndex = 75;
             this.rbSizeM6.TabStop = true;
             this.rbSizeM6.Text = "M";
             this.rbSizeM6.UseVisualStyleBackColor = true;
+            this.rbSizeM6.Visible = false;
             // 
             // rbSizeL6
             // 
@@ -1404,10 +1430,11 @@
             this.rbSizeL6.Font = new System.Drawing.Font("Comic Sans MS", 10F);
             this.rbSizeL6.Location = new System.Drawing.Point(169, 216);
             this.rbSizeL6.Name = "rbSizeL6";
-            this.rbSizeL6.Size = new System.Drawing.Size(40, 28);
+            this.rbSizeL6.Size = new System.Drawing.Size(35, 23);
             this.rbSizeL6.TabIndex = 76;
             this.rbSizeL6.Text = "L";
             this.rbSizeL6.UseVisualStyleBackColor = true;
+            this.rbSizeL6.Visible = false;
             // 
             // lblID6
             // 
@@ -1415,7 +1442,7 @@
             this.lblID6.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblID6.Location = new System.Drawing.Point(180, 199);
             this.lblID6.Name = "lblID6";
-            this.lblID6.Size = new System.Drawing.Size(24, 24);
+            this.lblID6.Size = new System.Drawing.Size(20, 18);
             this.lblID6.TabIndex = 78;
             this.lblID6.Text = "id";
             this.lblID6.Visible = false;
@@ -1467,11 +1494,12 @@
             this.rbSizeM5.Font = new System.Drawing.Font("Comic Sans MS", 10F);
             this.rbSizeM5.Location = new System.Drawing.Point(125, 216);
             this.rbSizeM5.Name = "rbSizeM5";
-            this.rbSizeM5.Size = new System.Drawing.Size(46, 28);
+            this.rbSizeM5.Size = new System.Drawing.Size(39, 23);
             this.rbSizeM5.TabIndex = 75;
             this.rbSizeM5.TabStop = true;
             this.rbSizeM5.Text = "M";
             this.rbSizeM5.UseVisualStyleBackColor = true;
+            this.rbSizeM5.Visible = false;
             // 
             // rbSizeL5
             // 
@@ -1479,10 +1507,11 @@
             this.rbSizeL5.Font = new System.Drawing.Font("Comic Sans MS", 10F);
             this.rbSizeL5.Location = new System.Drawing.Point(169, 216);
             this.rbSizeL5.Name = "rbSizeL5";
-            this.rbSizeL5.Size = new System.Drawing.Size(40, 28);
+            this.rbSizeL5.Size = new System.Drawing.Size(35, 23);
             this.rbSizeL5.TabIndex = 76;
             this.rbSizeL5.Text = "L";
             this.rbSizeL5.UseVisualStyleBackColor = true;
+            this.rbSizeL5.Visible = false;
             // 
             // lblID5
             // 
@@ -1490,7 +1519,7 @@
             this.lblID5.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblID5.Location = new System.Drawing.Point(180, 199);
             this.lblID5.Name = "lblID5";
-            this.lblID5.Size = new System.Drawing.Size(24, 24);
+            this.lblID5.Size = new System.Drawing.Size(20, 18);
             this.lblID5.TabIndex = 78;
             this.lblID5.Text = "id";
             this.lblID5.Visible = false;
@@ -1542,11 +1571,12 @@
             this.rbSizeM4.Font = new System.Drawing.Font("Comic Sans MS", 10F);
             this.rbSizeM4.Location = new System.Drawing.Point(125, 216);
             this.rbSizeM4.Name = "rbSizeM4";
-            this.rbSizeM4.Size = new System.Drawing.Size(46, 28);
+            this.rbSizeM4.Size = new System.Drawing.Size(39, 23);
             this.rbSizeM4.TabIndex = 75;
             this.rbSizeM4.TabStop = true;
             this.rbSizeM4.Text = "M";
             this.rbSizeM4.UseVisualStyleBackColor = true;
+            this.rbSizeM4.Visible = false;
             // 
             // rbSizeL4
             // 
@@ -1554,10 +1584,11 @@
             this.rbSizeL4.Font = new System.Drawing.Font("Comic Sans MS", 10F);
             this.rbSizeL4.Location = new System.Drawing.Point(169, 216);
             this.rbSizeL4.Name = "rbSizeL4";
-            this.rbSizeL4.Size = new System.Drawing.Size(40, 28);
+            this.rbSizeL4.Size = new System.Drawing.Size(35, 23);
             this.rbSizeL4.TabIndex = 76;
             this.rbSizeL4.Text = "L";
             this.rbSizeL4.UseVisualStyleBackColor = true;
+            this.rbSizeL4.Visible = false;
             // 
             // lblID4
             // 
@@ -1565,7 +1596,7 @@
             this.lblID4.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblID4.Location = new System.Drawing.Point(180, 199);
             this.lblID4.Name = "lblID4";
-            this.lblID4.Size = new System.Drawing.Size(24, 24);
+            this.lblID4.Size = new System.Drawing.Size(20, 18);
             this.lblID4.TabIndex = 78;
             this.lblID4.Text = "id";
             this.lblID4.Visible = false;
@@ -1617,11 +1648,12 @@
             this.rbSizeM3.Font = new System.Drawing.Font("Comic Sans MS", 10F);
             this.rbSizeM3.Location = new System.Drawing.Point(125, 216);
             this.rbSizeM3.Name = "rbSizeM3";
-            this.rbSizeM3.Size = new System.Drawing.Size(46, 28);
+            this.rbSizeM3.Size = new System.Drawing.Size(39, 23);
             this.rbSizeM3.TabIndex = 75;
             this.rbSizeM3.TabStop = true;
             this.rbSizeM3.Text = "M";
             this.rbSizeM3.UseVisualStyleBackColor = true;
+            this.rbSizeM3.Visible = false;
             // 
             // rbSizeL3
             // 
@@ -1629,10 +1661,11 @@
             this.rbSizeL3.Font = new System.Drawing.Font("Comic Sans MS", 10F);
             this.rbSizeL3.Location = new System.Drawing.Point(169, 216);
             this.rbSizeL3.Name = "rbSizeL3";
-            this.rbSizeL3.Size = new System.Drawing.Size(40, 28);
+            this.rbSizeL3.Size = new System.Drawing.Size(35, 23);
             this.rbSizeL3.TabIndex = 76;
             this.rbSizeL3.Text = "L";
             this.rbSizeL3.UseVisualStyleBackColor = true;
+            this.rbSizeL3.Visible = false;
             // 
             // lblID3
             // 
@@ -1640,7 +1673,7 @@
             this.lblID3.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblID3.Location = new System.Drawing.Point(180, 199);
             this.lblID3.Name = "lblID3";
-            this.lblID3.Size = new System.Drawing.Size(24, 24);
+            this.lblID3.Size = new System.Drawing.Size(20, 18);
             this.lblID3.TabIndex = 78;
             this.lblID3.Text = "id";
             this.lblID3.Visible = false;
@@ -1692,11 +1725,12 @@
             this.rbSizeM2.Font = new System.Drawing.Font("Comic Sans MS", 10F);
             this.rbSizeM2.Location = new System.Drawing.Point(125, 216);
             this.rbSizeM2.Name = "rbSizeM2";
-            this.rbSizeM2.Size = new System.Drawing.Size(46, 28);
+            this.rbSizeM2.Size = new System.Drawing.Size(39, 23);
             this.rbSizeM2.TabIndex = 75;
             this.rbSizeM2.TabStop = true;
             this.rbSizeM2.Text = "M";
             this.rbSizeM2.UseVisualStyleBackColor = true;
+            this.rbSizeM2.Visible = false;
             // 
             // rbSizeL2
             // 
@@ -1704,10 +1738,11 @@
             this.rbSizeL2.Font = new System.Drawing.Font("Comic Sans MS", 10F);
             this.rbSizeL2.Location = new System.Drawing.Point(169, 216);
             this.rbSizeL2.Name = "rbSizeL2";
-            this.rbSizeL2.Size = new System.Drawing.Size(40, 28);
+            this.rbSizeL2.Size = new System.Drawing.Size(35, 23);
             this.rbSizeL2.TabIndex = 76;
             this.rbSizeL2.Text = "L";
             this.rbSizeL2.UseVisualStyleBackColor = true;
+            this.rbSizeL2.Visible = false;
             // 
             // lblID2
             // 
@@ -1715,7 +1750,7 @@
             this.lblID2.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblID2.Location = new System.Drawing.Point(180, 199);
             this.lblID2.Name = "lblID2";
-            this.lblID2.Size = new System.Drawing.Size(24, 24);
+            this.lblID2.Size = new System.Drawing.Size(20, 18);
             this.lblID2.TabIndex = 78;
             this.lblID2.Text = "id";
             this.lblID2.Visible = false;
@@ -1767,11 +1802,12 @@
             this.rbSizeM1.Font = new System.Drawing.Font("Comic Sans MS", 10F);
             this.rbSizeM1.Location = new System.Drawing.Point(125, 216);
             this.rbSizeM1.Name = "rbSizeM1";
-            this.rbSizeM1.Size = new System.Drawing.Size(46, 28);
+            this.rbSizeM1.Size = new System.Drawing.Size(39, 23);
             this.rbSizeM1.TabIndex = 75;
             this.rbSizeM1.TabStop = true;
             this.rbSizeM1.Text = "M";
             this.rbSizeM1.UseVisualStyleBackColor = true;
+            this.rbSizeM1.Visible = false;
             // 
             // rbSizeL1
             // 
@@ -1779,10 +1815,11 @@
             this.rbSizeL1.Font = new System.Drawing.Font("Comic Sans MS", 10F);
             this.rbSizeL1.Location = new System.Drawing.Point(169, 216);
             this.rbSizeL1.Name = "rbSizeL1";
-            this.rbSizeL1.Size = new System.Drawing.Size(40, 28);
+            this.rbSizeL1.Size = new System.Drawing.Size(35, 23);
             this.rbSizeL1.TabIndex = 76;
             this.rbSizeL1.Text = "L";
             this.rbSizeL1.UseVisualStyleBackColor = true;
+            this.rbSizeL1.Visible = false;
             // 
             // lblID1
             // 
@@ -1790,7 +1827,7 @@
             this.lblID1.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblID1.Location = new System.Drawing.Point(180, 199);
             this.lblID1.Name = "lblID1";
-            this.lblID1.Size = new System.Drawing.Size(24, 24);
+            this.lblID1.Size = new System.Drawing.Size(20, 18);
             this.lblID1.TabIndex = 77;
             this.lblID1.Text = "id";
             this.lblID1.Visible = false;
@@ -1798,8 +1835,8 @@
             // tpPhong
             // 
             this.tpPhong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.tpPhong.Controls.Add(this.btnNextTable);
-            this.tpPhong.Controls.Add(this.btnPrevTable);
+            this.tpPhong.Controls.Add(this.btnNextPhong);
+            this.tpPhong.Controls.Add(this.btnPrevPhong);
             this.tpPhong.Controls.Add(this.btnPhong15);
             this.tpPhong.Controls.Add(this.btnPhong14);
             this.tpPhong.Controls.Add(this.btnPhong13);
@@ -1830,30 +1867,30 @@
             this.tpPhong.Controls.Add(this.lblIDPhong3);
             this.tpPhong.Controls.Add(this.lblIDPhong2);
             this.tpPhong.Controls.Add(this.lblIDPhong1);
-            this.tpPhong.Location = new System.Drawing.Point(4, 33);
+            this.tpPhong.Location = new System.Drawing.Point(4, 27);
             this.tpPhong.Name = "tpPhong";
             this.tpPhong.Padding = new System.Windows.Forms.Padding(3);
-            this.tpPhong.Size = new System.Drawing.Size(1110, 782);
+            this.tpPhong.Size = new System.Drawing.Size(1110, 788);
             this.tpPhong.TabIndex = 0;
             this.tpPhong.Text = "Phòng";
             // 
-            // btnNextTable
+            // btnNextPhong
             // 
-            this.btnNextTable.Location = new System.Drawing.Point(565, 714);
-            this.btnNextTable.Name = "btnNextTable";
-            this.btnNextTable.Size = new System.Drawing.Size(165, 52);
-            this.btnNextTable.TabIndex = 120;
-            this.btnNextTable.Text = "Next";
-            this.btnNextTable.UseVisualStyleBackColor = true;
+            this.btnNextPhong.Location = new System.Drawing.Point(565, 714);
+            this.btnNextPhong.Name = "btnNextPhong";
+            this.btnNextPhong.Size = new System.Drawing.Size(165, 52);
+            this.btnNextPhong.TabIndex = 120;
+            this.btnNextPhong.Text = "Next";
+            this.btnNextPhong.UseVisualStyleBackColor = true;
             // 
-            // btnPrevTable
+            // btnPrevPhong
             // 
-            this.btnPrevTable.Location = new System.Drawing.Point(394, 714);
-            this.btnPrevTable.Name = "btnPrevTable";
-            this.btnPrevTable.Size = new System.Drawing.Size(165, 52);
-            this.btnPrevTable.TabIndex = 119;
-            this.btnPrevTable.Text = "Prev";
-            this.btnPrevTable.UseVisualStyleBackColor = true;
+            this.btnPrevPhong.Location = new System.Drawing.Point(394, 714);
+            this.btnPrevPhong.Name = "btnPrevPhong";
+            this.btnPrevPhong.Size = new System.Drawing.Size(165, 52);
+            this.btnPrevPhong.TabIndex = 119;
+            this.btnPrevPhong.Text = "Prev";
+            this.btnPrevPhong.UseVisualStyleBackColor = true;
             // 
             // btnPhong15
             // 
@@ -1863,6 +1900,7 @@
             this.btnPhong15.TabIndex = 14;
             this.btnPhong15.Text = "PHÒNG 15";
             this.btnPhong15.UseVisualStyleBackColor = true;
+            this.btnPhong15.Click += new System.EventHandler(this.btnPhong_Click);
             // 
             // btnPhong14
             // 
@@ -1872,6 +1910,7 @@
             this.btnPhong14.TabIndex = 13;
             this.btnPhong14.Text = "PHÒNG 14";
             this.btnPhong14.UseVisualStyleBackColor = true;
+            this.btnPhong14.Click += new System.EventHandler(this.btnPhong_Click);
             // 
             // btnPhong13
             // 
@@ -1881,6 +1920,7 @@
             this.btnPhong13.TabIndex = 12;
             this.btnPhong13.Text = "PHÒNG 13";
             this.btnPhong13.UseVisualStyleBackColor = true;
+            this.btnPhong13.Click += new System.EventHandler(this.btnPhong_Click);
             // 
             // btnPhong12
             // 
@@ -1890,6 +1930,7 @@
             this.btnPhong12.TabIndex = 11;
             this.btnPhong12.Text = "PHÒNG 12";
             this.btnPhong12.UseVisualStyleBackColor = true;
+            this.btnPhong12.Click += new System.EventHandler(this.btnPhong_Click);
             // 
             // btnPhong11
             // 
@@ -1899,6 +1940,7 @@
             this.btnPhong11.TabIndex = 10;
             this.btnPhong11.Text = "PHÒNG 11";
             this.btnPhong11.UseVisualStyleBackColor = true;
+            this.btnPhong11.Click += new System.EventHandler(this.btnPhong_Click);
             // 
             // btnPhong10
             // 
@@ -1908,6 +1950,7 @@
             this.btnPhong10.TabIndex = 9;
             this.btnPhong10.Text = "PHÒNG 10";
             this.btnPhong10.UseVisualStyleBackColor = true;
+            this.btnPhong10.Click += new System.EventHandler(this.btnPhong_Click);
             // 
             // btnPhong9
             // 
@@ -1917,6 +1960,7 @@
             this.btnPhong9.TabIndex = 8;
             this.btnPhong9.Text = "PHÒNG 9";
             this.btnPhong9.UseVisualStyleBackColor = true;
+            this.btnPhong9.Click += new System.EventHandler(this.btnPhong_Click);
             // 
             // btnPhong8
             // 
@@ -1926,6 +1970,7 @@
             this.btnPhong8.TabIndex = 7;
             this.btnPhong8.Text = "PHÒNG 8";
             this.btnPhong8.UseVisualStyleBackColor = true;
+            this.btnPhong8.Click += new System.EventHandler(this.btnPhong_Click);
             // 
             // btnPhong7
             // 
@@ -1935,6 +1980,7 @@
             this.btnPhong7.TabIndex = 6;
             this.btnPhong7.Text = "PHÒNG 7";
             this.btnPhong7.UseVisualStyleBackColor = true;
+            this.btnPhong7.Click += new System.EventHandler(this.btnPhong_Click);
             // 
             // btnPhong6
             // 
@@ -1944,6 +1990,7 @@
             this.btnPhong6.TabIndex = 5;
             this.btnPhong6.Text = "PHÒNG 6";
             this.btnPhong6.UseVisualStyleBackColor = true;
+            this.btnPhong6.Click += new System.EventHandler(this.btnPhong_Click);
             // 
             // btnPhong5
             // 
@@ -1953,6 +2000,7 @@
             this.btnPhong5.TabIndex = 4;
             this.btnPhong5.Text = "PHÒNG 5";
             this.btnPhong5.UseVisualStyleBackColor = true;
+            this.btnPhong5.Click += new System.EventHandler(this.btnPhong_Click);
             // 
             // btnPhong4
             // 
@@ -1962,6 +2010,7 @@
             this.btnPhong4.TabIndex = 3;
             this.btnPhong4.Text = "PHÒNG 4";
             this.btnPhong4.UseVisualStyleBackColor = true;
+            this.btnPhong4.Click += new System.EventHandler(this.btnPhong_Click);
             // 
             // btnPhong3
             // 
@@ -1971,6 +2020,7 @@
             this.btnPhong3.TabIndex = 2;
             this.btnPhong3.Text = "PHÒNG 3";
             this.btnPhong3.UseVisualStyleBackColor = true;
+            this.btnPhong3.Click += new System.EventHandler(this.btnPhong_Click);
             // 
             // btnPhong2
             // 
@@ -1981,6 +2031,7 @@
             this.btnPhong2.TabIndex = 1;
             this.btnPhong2.Text = "PHÒNG 2";
             this.btnPhong2.UseVisualStyleBackColor = false;
+            this.btnPhong2.Click += new System.EventHandler(this.btnPhong_Click);
             // 
             // btnPhong1
             // 
@@ -1991,13 +2042,14 @@
             this.btnPhong1.TabIndex = 0;
             this.btnPhong1.Text = "PHÒNG 1";
             this.btnPhong1.UseVisualStyleBackColor = false;
+            this.btnPhong1.Click += new System.EventHandler(this.btnPhong_Click);
             // 
             // lblIDPhong15
             // 
             this.lblIDPhong15.AutoSize = true;
             this.lblIDPhong15.Location = new System.Drawing.Point(1056, 656);
             this.lblIDPhong15.Name = "lblIDPhong15";
-            this.lblIDPhong15.Size = new System.Drawing.Size(24, 24);
+            this.lblIDPhong15.Size = new System.Drawing.Size(21, 19);
             this.lblIDPhong15.TabIndex = 135;
             this.lblIDPhong15.Text = "id";
             this.lblIDPhong15.Visible = false;
@@ -2007,7 +2059,7 @@
             this.lblIDPhong14.AutoSize = true;
             this.lblIDPhong14.Location = new System.Drawing.Point(839, 656);
             this.lblIDPhong14.Name = "lblIDPhong14";
-            this.lblIDPhong14.Size = new System.Drawing.Size(24, 24);
+            this.lblIDPhong14.Size = new System.Drawing.Size(21, 19);
             this.lblIDPhong14.TabIndex = 134;
             this.lblIDPhong14.Text = "id";
             this.lblIDPhong14.Visible = false;
@@ -2017,7 +2069,7 @@
             this.lblIDPhong13.AutoSize = true;
             this.lblIDPhong13.Location = new System.Drawing.Point(622, 656);
             this.lblIDPhong13.Name = "lblIDPhong13";
-            this.lblIDPhong13.Size = new System.Drawing.Size(24, 24);
+            this.lblIDPhong13.Size = new System.Drawing.Size(21, 19);
             this.lblIDPhong13.TabIndex = 133;
             this.lblIDPhong13.Text = "id";
             this.lblIDPhong13.Visible = false;
@@ -2027,7 +2079,7 @@
             this.lblIDPhong12.AutoSize = true;
             this.lblIDPhong12.Location = new System.Drawing.Point(404, 656);
             this.lblIDPhong12.Name = "lblIDPhong12";
-            this.lblIDPhong12.Size = new System.Drawing.Size(24, 24);
+            this.lblIDPhong12.Size = new System.Drawing.Size(21, 19);
             this.lblIDPhong12.TabIndex = 132;
             this.lblIDPhong12.Text = "id";
             this.lblIDPhong12.Visible = false;
@@ -2037,7 +2089,7 @@
             this.lblIDPhong11.AutoSize = true;
             this.lblIDPhong11.Location = new System.Drawing.Point(186, 656);
             this.lblIDPhong11.Name = "lblIDPhong11";
-            this.lblIDPhong11.Size = new System.Drawing.Size(24, 24);
+            this.lblIDPhong11.Size = new System.Drawing.Size(21, 19);
             this.lblIDPhong11.TabIndex = 131;
             this.lblIDPhong11.Text = "id";
             this.lblIDPhong11.Visible = false;
@@ -2047,7 +2099,7 @@
             this.lblIDPhong10.AutoSize = true;
             this.lblIDPhong10.Location = new System.Drawing.Point(1056, 439);
             this.lblIDPhong10.Name = "lblIDPhong10";
-            this.lblIDPhong10.Size = new System.Drawing.Size(24, 24);
+            this.lblIDPhong10.Size = new System.Drawing.Size(21, 19);
             this.lblIDPhong10.TabIndex = 130;
             this.lblIDPhong10.Text = "id";
             this.lblIDPhong10.Visible = false;
@@ -2057,7 +2109,7 @@
             this.lblIDPhong9.AutoSize = true;
             this.lblIDPhong9.Location = new System.Drawing.Point(839, 439);
             this.lblIDPhong9.Name = "lblIDPhong9";
-            this.lblIDPhong9.Size = new System.Drawing.Size(24, 24);
+            this.lblIDPhong9.Size = new System.Drawing.Size(21, 19);
             this.lblIDPhong9.TabIndex = 129;
             this.lblIDPhong9.Text = "id";
             this.lblIDPhong9.Visible = false;
@@ -2067,7 +2119,7 @@
             this.lblIDPhong8.AutoSize = true;
             this.lblIDPhong8.Location = new System.Drawing.Point(622, 439);
             this.lblIDPhong8.Name = "lblIDPhong8";
-            this.lblIDPhong8.Size = new System.Drawing.Size(24, 24);
+            this.lblIDPhong8.Size = new System.Drawing.Size(21, 19);
             this.lblIDPhong8.TabIndex = 128;
             this.lblIDPhong8.Text = "id";
             this.lblIDPhong8.Visible = false;
@@ -2077,7 +2129,7 @@
             this.lblIDPhong7.AutoSize = true;
             this.lblIDPhong7.Location = new System.Drawing.Point(404, 439);
             this.lblIDPhong7.Name = "lblIDPhong7";
-            this.lblIDPhong7.Size = new System.Drawing.Size(24, 24);
+            this.lblIDPhong7.Size = new System.Drawing.Size(21, 19);
             this.lblIDPhong7.TabIndex = 127;
             this.lblIDPhong7.Text = "id";
             this.lblIDPhong7.Visible = false;
@@ -2087,7 +2139,7 @@
             this.lblIDPhong6.AutoSize = true;
             this.lblIDPhong6.Location = new System.Drawing.Point(186, 439);
             this.lblIDPhong6.Name = "lblIDPhong6";
-            this.lblIDPhong6.Size = new System.Drawing.Size(24, 24);
+            this.lblIDPhong6.Size = new System.Drawing.Size(21, 19);
             this.lblIDPhong6.TabIndex = 126;
             this.lblIDPhong6.Text = "id";
             this.lblIDPhong6.Visible = false;
@@ -2097,7 +2149,7 @@
             this.lblIDPhong5.AutoSize = true;
             this.lblIDPhong5.Location = new System.Drawing.Point(1056, 219);
             this.lblIDPhong5.Name = "lblIDPhong5";
-            this.lblIDPhong5.Size = new System.Drawing.Size(24, 24);
+            this.lblIDPhong5.Size = new System.Drawing.Size(21, 19);
             this.lblIDPhong5.TabIndex = 125;
             this.lblIDPhong5.Text = "id";
             this.lblIDPhong5.Visible = false;
@@ -2107,7 +2159,7 @@
             this.lblIDPhong4.AutoSize = true;
             this.lblIDPhong4.Location = new System.Drawing.Point(839, 219);
             this.lblIDPhong4.Name = "lblIDPhong4";
-            this.lblIDPhong4.Size = new System.Drawing.Size(24, 24);
+            this.lblIDPhong4.Size = new System.Drawing.Size(21, 19);
             this.lblIDPhong4.TabIndex = 124;
             this.lblIDPhong4.Text = "id";
             this.lblIDPhong4.Visible = false;
@@ -2117,7 +2169,7 @@
             this.lblIDPhong3.AutoSize = true;
             this.lblIDPhong3.Location = new System.Drawing.Point(622, 219);
             this.lblIDPhong3.Name = "lblIDPhong3";
-            this.lblIDPhong3.Size = new System.Drawing.Size(24, 24);
+            this.lblIDPhong3.Size = new System.Drawing.Size(21, 19);
             this.lblIDPhong3.TabIndex = 123;
             this.lblIDPhong3.Text = "id";
             this.lblIDPhong3.Visible = false;
@@ -2127,7 +2179,7 @@
             this.lblIDPhong2.AutoSize = true;
             this.lblIDPhong2.Location = new System.Drawing.Point(404, 219);
             this.lblIDPhong2.Name = "lblIDPhong2";
-            this.lblIDPhong2.Size = new System.Drawing.Size(24, 24);
+            this.lblIDPhong2.Size = new System.Drawing.Size(21, 19);
             this.lblIDPhong2.TabIndex = 122;
             this.lblIDPhong2.Text = "id";
             this.lblIDPhong2.Visible = false;
@@ -2137,7 +2189,7 @@
             this.lblIDPhong1.AutoSize = true;
             this.lblIDPhong1.Location = new System.Drawing.Point(186, 219);
             this.lblIDPhong1.Name = "lblIDPhong1";
-            this.lblIDPhong1.Size = new System.Drawing.Size(24, 24);
+            this.lblIDPhong1.Size = new System.Drawing.Size(21, 19);
             this.lblIDPhong1.TabIndex = 121;
             this.lblIDPhong1.Text = "id";
             this.lblIDPhong1.Visible = false;
@@ -2153,13 +2205,6 @@
             this.tcMenu.SelectedIndex = 0;
             this.tcMenu.Size = new System.Drawing.Size(1118, 819);
             this.tcMenu.TabIndex = 10;
-            // 
-            // accountToolStripMenuItem
-            // 
-            this.accountToolStripMenuItem.Name = "accountToolStripMenuItem";
-            this.accountToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
-            this.accountToolStripMenuItem.Text = "Account";
-            this.accountToolStripMenuItem.Click += new System.EventHandler(this.accountToolStripMenuItem_Click);
             // 
             // frmMain
             // 
@@ -2179,6 +2224,7 @@
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý khách sạn";
+            this.Load += new System.EventHandler(this.frmMain_Load);
             this.pnHoaDon.ResumeLayout(false);
             this.pnHoaDon.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GiamGia)).EndInit();
@@ -2389,8 +2435,8 @@
         private System.Windows.Forms.RadioButton rbSizeL1;
         private System.Windows.Forms.Label lblID1;
         private System.Windows.Forms.TabPage tpPhong;
-        private System.Windows.Forms.Button btnNextTable;
-        private System.Windows.Forms.Button btnPrevTable;
+        private System.Windows.Forms.Button btnNextPhong;
+        private System.Windows.Forms.Button btnPrevPhong;
         private System.Windows.Forms.Button btnPhong15;
         private System.Windows.Forms.Button btnPhong14;
         private System.Windows.Forms.Button btnPhong13;
