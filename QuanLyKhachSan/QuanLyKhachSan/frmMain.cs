@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Drawing.Printing;
 using System.Globalization;
@@ -17,6 +18,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 //using static System.Net.Mime.MediaTypeNames;
 //using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
@@ -26,9 +28,20 @@ namespace QuanLyQuanCafe
     {
         string path = @"..\..\images\";
         System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("en-US");
-
+        string tenDangNhap;
+        string matkhau;
+        SqlConnection connection;
+        SqlCommand command;
+        string str = "Data Source=SANG-ADVICE\\SQLEXPRESS;Initial Catalog=QuanLyKhachSan;Integrated Security=True";
         public frmMain()
         {
+            InitializeComponent();
+        }
+
+        public frmMain(string userName, string passWord)
+        {
+            this.tenDangNhap = userName;
+            this.matkhau = passWord;
             InitializeComponent();
         }
 
@@ -336,6 +349,60 @@ namespace QuanLyQuanCafe
 
         #endregion
 
+        bool kiemTraChucVu(string username, string password)
+        {
+            string connectionString = "Data Source=SANG-ADVICE\\SQLEXPRESS;Initial Catalog=QuanLyKhachSan;Integrated Security=True";
+            SqlConnection connection = new SqlConnection(connectionString);
+
+            // Thực thi câu lệnh SQL
+            string sql = "SELECT CHUCVU FROM NHANVIEN WHERE TAIKHOAN ='" + username + "' AND MATKHAU = '" + password + "'";
+            SqlCommand command = new SqlCommand(sql, connection);
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+
+            // Đọc dữ liệu và gán vào textbox
+            if (reader.Read())
+            {
+                string chucVu = reader["CHUCVU"].ToString();
+                if (chucVu.Equals("Admin"))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            // Đóng kết nối
+            reader.Close();
+            connection.Close();
+            return false;
+        }
+
+        string kiemTraNhanVien(string username, string password)
+        {
+            string connectionString = "Data Source=SANG-ADVICE\\SQLEXPRESS;Initial Catalog=QuanLyKhachSan;Integrated Security=True";
+            SqlConnection connection = new SqlConnection(connectionString);
+
+            // Thực thi câu lệnh SQL
+            string sql = "SELECT MADV FROM NHANVIEN WHERE TAIKHOAN ='" + username + "' AND MATKHAU = '" + password + "'";
+            SqlCommand command = new SqlCommand(sql, connection);
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+
+            // Đọc dữ liệu và gán vào textbox
+            if (reader.Read())
+            {
+                string dichVu = reader["MADV"].ToString();
+                return dichVu;
+            }
+            // Đóng kết nối
+            reader.Close();
+            connection.Close();
+            return "0";
+        }
+
+
         void loadfrmNhanVien(String tenTo)
         {
             frmNhanVien frm = new frmNhanVien(tenTo);
@@ -343,34 +410,76 @@ namespace QuanLyQuanCafe
         }
         private void btnGiatLa_Click(object sender, EventArgs e)
         {
-            loadfrmNhanVien("2");
+            if(kiemTraNhanVien(this.tenDangNhap, this.matkhau).Equals("2"))
+            {
+                loadfrmNhanVien("2");
+            }
+            else
+            {
+                return;
+            }
         }
 
         private void btnDonPhong_Click(object sender, EventArgs e)
         {
-            loadfrmNhanVien("1");
+            if (kiemTraNhanVien(this.tenDangNhap, this.matkhau).Equals("1"))
+            {
+                loadfrmNhanVien("1");
+            }
+            else
+            {
+                return;
+            }
 
         }
 
         private void btnXe_Click(object sender, EventArgs e)
         {
-            loadfrmNhanVien("3");
+            if (kiemTraNhanVien(this.tenDangNhap, this.matkhau).Equals("3"))
+            {
+                loadfrmNhanVien("3");
+            }
+            else
+            {
+                return;
+            }
         }
 
         private void btnTongDai_Click(object sender, EventArgs e)
         {
-            loadfrmNhanVien("4");
+            if (kiemTraNhanVien(this.tenDangNhap, this.matkhau).Equals("4"))
+            {
+                loadfrmNhanVien("4");
+            }
+            else
+            {
+                return;
+            }
         }
 
         private void btnBep_Click(object sender, EventArgs e)
         {
-            loadfrmNhanVien("5");
+            if (kiemTraNhanVien(this.tenDangNhap, this.matkhau).Equals("5"))
+            {
+                loadfrmNhanVien("5");
+            }
+            else
+            {
+                return;
+            }
         }
 
         private void accountToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmQuanLyTaiKhoan frmQuanLy = new frmQuanLyTaiKhoan();
-            frmQuanLy.ShowDialog();
+            if (kiemTraChucVu(this.tenDangNhap, this.matkhau))
+            {
+                frmQuanLyTaiKhoan frmQuanLy = new frmQuanLyTaiKhoan();
+                frmQuanLy.ShowDialog();
+            }
+            else
+            {
+                return;
+            }
         }
 
         private void frmMain_Load(object sender, EventArgs e)

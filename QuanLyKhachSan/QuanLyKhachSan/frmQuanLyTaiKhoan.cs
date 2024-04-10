@@ -46,7 +46,7 @@ namespace QuanLyKhachSan
         private void btnDangKy_Click(object sender, EventArgs e)
         {
             command = connection.CreateCommand();
-            command.CommandText = "INSERT INTO NHANVIEN (MANV, TENNV, CHUCVU, MABP, MADV, TAIKHOAN, MATKHAU) VALUES ('"+txbMaNV.Text+"','" + txbTenNV.Text + "', '"+ txbChucVu.Text + "', '" + txbMaBoPhan.Text +"','" + txbMaDV.Text + "', '" + txbTaiKhoan.Text + "', '" + txbMatKhau.Text + "')";
+            command.CommandText = "INSERT INTO NHANVIEN (MANV, TENNV, CHUCVU, MABP, MADV, TAIKHOAN, MATKHAU) VALUES ('"+txbMaNV.Text+"',N'" + txbTenNV.Text + "', '"+ txbChucVu.Text + "', '" + txbMaBoPhan.Text +"','" + txbMaDV.Text + "', '" + txbTaiKhoan.Text + "', '" + txbMatKhau.Text + "')";
             command.ExecuteNonQuery();
             loadData();
         }
@@ -127,6 +127,7 @@ namespace QuanLyKhachSan
         {
             int i;
             i = dtgv.CurrentRow.Index;
+            String maNV = dtgv.Rows[i].Cells[0].Value.ToString();
             String maBoPhan = dtgv.Rows[i].Cells[3].Value.ToString();
             String maDV = dtgv.Rows[i].Cells[4].Value.ToString();
             command = connection.CreateCommand();
@@ -134,22 +135,22 @@ namespace QuanLyKhachSan
             {
                 if (maDV != txbMaDV.Text)
                 {
-                    command.CommandText = "update NHANVIEN set TENNV = '" + txbTenNV.Text + "', CHUCVU = '" + txbChucVu.Text + "', MABP = '" + txbMaBoPhan.Text + "', MADV = '" + txbMaDV.Text + "', TAIKHOAN = '" + txbTaiKhoan.Text + "', MATKHAU = '" + txbMatKhau.Text + "' WHERE MANV = '" + txbMaNV.Text + "'";
+                    command.CommandText = "update NHANVIEN set TENNV = '" + txbTenNV.Text + "', CHUCVU = '" + txbChucVu.Text + "', MABP = '" + txbMaBoPhan.Text + "', MADV = '" + txbMaDV.Text + "', TAIKHOAN = '" + txbTaiKhoan.Text + "', MATKHAU = '" + txbMatKhau.Text + "' WHERE MANV = '" + maNV + "'";
                 }
                 else
                 {
-                    command.CommandText = "update NHANVIEN set TENNV = '" + txbTenNV.Text + "', CHUCVU = '" + txbChucVu.Text + "', MABP = '" + txbMaBoPhan.Text + "', TAIKHOAN = '" + txbTaiKhoan.Text + "', MATKHAU = '" + txbMatKhau.Text + "' WHERE MANV = '" + txbMaNV.Text + "'";
+                    command.CommandText = "update NHANVIEN set TENNV = '" + txbTenNV.Text + "', CHUCVU = '" + txbChucVu.Text + "', MABP = '" + txbMaBoPhan.Text + "', TAIKHOAN = '" + txbTaiKhoan.Text + "', MATKHAU = '" + txbMatKhau.Text + "' WHERE MANV = '" + maNV + "'";
                 }
             }
             else
             {
                 if (maDV != txbMaDV.Text)
                 {
-                    command.CommandText = "update NHANVIEN set TENNV = '" + txbTenNV.Text + "', CHUCVU = '" + txbChucVu.Text + "', MADV = '" + txbMaDV.Text + "', TAIKHOAN = '" + txbTaiKhoan.Text + "', MATKHAU = '" + txbMatKhau.Text + "' WHERE MANV = '" + txbMaNV.Text + "'";
+                    command.CommandText = "update NHANVIEN set TENNV = '" + txbTenNV.Text + "', CHUCVU = '" + txbChucVu.Text + "', MADV = '" + txbMaDV.Text + "', TAIKHOAN = '" + txbTaiKhoan.Text + "', MATKHAU = '" + txbMatKhau.Text + "' WHERE MANV = '" + maNV + "'";
                 }
                 else
                 {
-                    command.CommandText = "update NHANVIEN set TENNV = '" + txbTenNV.Text + "', CHUCVU = '" + txbChucVu.Text + "', TAIKHOAN = '" + txbTaiKhoan.Text + "', MATKHAU = '" + txbMatKhau.Text + "' WHERE MANV = '" + txbMaNV.Text + "'";
+                    command.CommandText = "update NHANVIEN set TENNV = '" + txbTenNV.Text + "', CHUCVU = '" + txbChucVu.Text + "', TAIKHOAN = '" + txbTaiKhoan.Text + "', MATKHAU = '" + txbMatKhau.Text + "' WHERE MANV = '" + maNV + "'";
                 }
             }
             command.ExecuteNonQuery();
