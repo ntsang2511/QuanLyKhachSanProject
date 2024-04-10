@@ -18,7 +18,6 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 //using static System.Net.Mime.MediaTypeNames;
 //using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
@@ -207,7 +206,7 @@ namespace QuanLyQuanCafe
             txtTienThua.Text = "0";
             GiamGia.Value = 0;
         }
-
+        #endregion
         private void ShowPhong()
         {
             SetEmptyPhong();
@@ -347,7 +346,176 @@ namespace QuanLyQuanCafe
             }
         }
 
-        #endregion
+        private void ShowMenuDichVu()
+        {
+            SetEmptyMenu();
+            //SetRadiobuttonMenu();
+            SetVisibleMenu();
+            List<DichVu> listDichVu = DichVuDAO.Instance.GetListDichVu();
+            if (listDichVu.Count > 0)
+            {
+                int count = 1;
+                foreach (DichVu item in listDichVu)
+                {
+                    if (count > 15)
+                    {
+                        break;
+                    }
+                    SetItemMenu(item, count);
+                    count++;
+                }
+                btnPrevDV.Visible = false;
+                btnNextDV.Visible = false;
+                if (listDichVu.Count > 15)
+                {
+                    btnPrevDV.Visible = true;
+                    btnPrevDV.Enabled = false;
+                    btnNextDV.Visible = true;
+                    btnNextDV.Enabled = true;
+                }
+            }
+        }
+
+        private void SetItemMenu(DichVu dv, int id)
+        {
+            CultureInfo culture = new CultureInfo("vi-VN");
+            System.Drawing.Image image = null;
+            if (dv.Anh != "")
+            {
+                if (File.Exists(path + dv.Anh.Trim()))
+                {
+                    image = System.Drawing.Image.FromFile(path + dv.Anh.Trim());
+                }
+            }
+            else
+            {
+                image = System.Drawing.Image.FromFile(path + "noimage.jpg");
+            }
+            switch (id)
+            {
+                case 1:
+                    pnMenu1.Visible = true;
+                    pbImage1.Image = image;
+                    pbImage1.Text = id.ToString();
+                    pbImage1.Tag = dv;
+                    lblName1.Text = dv.TenDV;
+                    lblGia1.Text = "Giá: " + dv.DonGia.ToString() + "đ";
+                    break;
+                case 2:
+                    pnMenu2.Visible = true;
+                    pbImage2.Image = image;
+                    pbImage2.Text = id.ToString();
+                    pbImage2.Tag = dv;
+                    lblName2.Text = dv.TenDV;
+                    lblGia2.Text = "Giá: " + dv.DonGia.ToString() + "đ";
+                    break;
+                case 3:
+                    pnMenu3.Visible = true;
+                    pbImage3.Image = image;
+                    pbImage3.Text = id.ToString();
+                    pbImage3.Tag = dv;
+                    lblName3.Text = dv.TenDV;
+                    lblGia3.Text = "Giá: " + dv.DonGia.ToString() + "đ";
+                    break;
+                case 4:
+                    pnMenu4.Visible = true;
+                    pbImage4.Image = image;
+                    pbImage4.Text = id.ToString();
+                    pbImage4.Tag = dv;
+                    lblName4.Text = dv.TenDV;
+                    lblGia4.Text = "Giá: " + dv.DonGia.ToString() + "đ";
+                    break;
+                case 5:
+                    pnMenu5.Visible = true;
+                    pbImage5.Image = image;
+                    pbImage5.Text = id.ToString();
+                    pbImage5.Tag = dv;
+                    lblName5.Text = dv.TenDV;
+                    lblGia5.Text = "Giá: " + dv.DonGia.ToString() + "đ";
+                    break;
+                case 6:
+                    pnMenu6.Visible = true;
+                    pbImage6.Image = image;
+                    pbImage6.Text = id.ToString();
+                    pbImage6.Tag = dv;
+                    lblName6.Text = dv.TenDV;
+                    lblGia6.Text = "Giá: " + dv.DonGia.ToString() + "đ";
+                    break;
+                case 7:
+                    pnMenu7.Visible = true;
+                    pbImage7.Image = image;
+                    pbImage7.Text = id.ToString();
+                    pbImage7.Tag = dv;
+                    lblName7.Text = dv.TenDV;
+                    lblGia7.Text = "Giá: " + dv.DonGia.ToString() + "đ";
+                    break;
+                case 8:
+                    pnMenu8.Visible = true;
+                    pbImage8.Image = image;
+                    pbImage8.Text = id.ToString();
+                    pbImage8.Tag = dv;
+                    lblName8.Text = dv.TenDV;
+                    lblGia8.Text = "Giá: " + dv.DonGia.ToString() + "đ";
+                    break;
+                case 9:
+                    pnMenu9.Visible = true;
+                    pbImage9.Image = image;
+                    pbImage9.Text = id.ToString();
+                    pbImage9.Tag = dv;
+                    lblName9.Text = dv.TenDV;
+                    lblGia9.Text = "Giá: " + dv.DonGia.ToString() + "đ";
+                    break;
+                case 10:
+                    pnMenu10.Visible = true;
+                    pbImage10.Image = image;
+                    pbImage10.Text = id.ToString();
+                    pbImage10.Tag = dv;
+                    lblName10.Text = dv.TenDV;
+                    lblGia10.Text = "Giá: " + dv.DonGia.ToString() + "đ";
+                    break;
+                case 11:
+                    pnMenu11.Visible = true;
+                    pbImage11.Image = image;
+                    pbImage11.Text = id.ToString();
+                    pbImage11.Tag = dv;
+                    lblName11.Text = dv.TenDV;
+                    lblGia11.Text = "Giá: " + dv.DonGia.ToString() + "đ";
+                    break;
+                case 12:
+                    pnMenu12.Visible = true;
+                    pbImage12.Image = image;
+                    pbImage12.Text = id.ToString();
+                    pbImage12.Tag = dv;
+                    lblName12.Text = dv.TenDV;
+                    lblGia12.Text = "Giá: " + dv.DonGia.ToString() + "đ";
+                    break;
+                case 13:
+                    pnMenu13.Visible = true;
+                    pbImage13.Image = image;
+                    pbImage13.Text = id.ToString();
+                    pbImage13.Tag = dv;
+                    lblName13.Text = dv.TenDV;
+                    lblGia13.Text = "Giá: " + dv.DonGia.ToString() + "đ";
+                    break;
+                case 14:
+                    pnMenu14.Visible = true;
+                    pbImage14.Image = image;
+                    pbImage14.Text = id.ToString();
+                    pbImage14.Tag = dv;
+                    lblName14.Text = dv.TenDV;
+                    lblGia14.Text = "Giá: " + dv.DonGia.ToString() + "đ";
+                    break;
+                case 15:
+                    pnMenu15.Visible = true;
+                    pbImage15.Image = image;
+                    pbImage15.Text = id.ToString();
+                    pbImage15.Tag = dv;
+                    lblName15.Text = dv.TenDV;
+                    lblGia15.Text = "Giá: " + dv.DonGia.ToString() + "đ";
+                    break;
+            }
+        }
+
 
         bool kiemTraChucVu(string username, string password)
         {
@@ -485,7 +653,10 @@ namespace QuanLyQuanCafe
         private void frmMain_Load(object sender, EventArgs e)
         {
             this.Activate();
+            lblUser.Text = "Xin chào, " + this.tenDangNhap;
+            lblPhong.Text = "";
             ShowPhong();
+            ShowMenuDichVu();
         }
 
         private void btnPhong_Click(object sender, EventArgs e)
@@ -501,14 +672,471 @@ namespace QuanLyQuanCafe
 
                 //Get thong tin dat phong
                 //...
+                DataTable data = PhongDAO.Instance.GetTTDatPhong(maPhong);
+                string maDP = "";
+                double tongtien = 0;
+                if (data.Rows.Count > 0)
+                {
+                    DataRow dr = data.Rows[0];
+                    maDP = dr["MADP"].ToString();
+                    int soNgay = 0;
+                    TimeSpan time;
+                    if (dr["NGAYTRA"].ToString() == "")
+                    {
+                        time = DateTime.Now - Convert.ToDateTime(dr["NGAYDEN"].ToString());
+                    }
+                    else
+                    {
+                        time = Convert.ToDateTime(dr["NGAYTRA"].ToString()) - Convert.ToDateTime(dr["NGAYDEN"].ToString());
+                    }
+                    soNgay = time.Days;
+                    if (soNgay < 0) { soNgay = 0; }
+                    ListViewItem lv = new ListViewItem(dr["MAPHONG"].ToString() + " - Tiền phòng");
+                    lv.SubItems.Add(dr["GIAPHONG"].ToString());
+                    lv.SubItems.Add(soNgay.ToString());
+                    lviHoaDon.Items.Add(lv);
+                    tongtien = soNgay * Convert.ToInt32(dr["GIAPHONG"].ToString());
+
+                    DataTable dt = PhongDAO.Instance.GetTTDVPhong(maDP);
+                    if (dt.Rows.Count > 0)
+                    {
+                        foreach (DataRow row in dt.Rows)
+                        {
+                            lv = new ListViewItem(row["TENDV"].ToString());
+                            lv.SubItems.Add(row["DONGIA"].ToString());
+                            lv.SubItems.Add(row["SOLUONG"].ToString());
+                            tongtien = tongtien + Convert.ToInt32(row["DONGIA"].ToString()) * Convert.ToInt32(row["SOLUONG"].ToString());
+                            lviHoaDon.Items.Add(lv);
+                        }
+                    }
+
+                    //txtGhiChu.Text = drBill["ghichu"].ToString();
+                    txtTongTien.Text = tongtien.ToString("0,00");
+                    //GiamGia.Value = Convert.ToInt32(drBill["discount"]);
+                }
+                else
+                {
+                    txtGhiChu.Text = "";
+                    txtTongTien.Text = "0";
+                    GiamGia.Value = 0;
+                }
+
                 lviHoaDon.Tag = phong;
             }
             else
             {
-                MessageBox.Show("Chọn phòng đang sử dụng để thêm dịch vụ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                if (MessageBox.Show("Có phải bạn muốn đăng ký thuê phòng không?", "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                {
+                    frmDangKyThuePhong frm = new frmDangKyThuePhong();
+                    frm.ShowDialog();
+                }
             }
             txtKhachDua.Text = "0";
+        }
+
+        private void btnPrevDV_Click(object sender, EventArgs e)
+        {
+            SetEmptyMenu();
+            SetVisibleMenu();
+            List<DichVu> listDichVu = DichVuDAO.Instance.GetPrevDichVu((pbImage1.Tag as DichVu).MaDV);
+            if (listDichVu.Count > 0)
+            {
+                int count = 1;
+                foreach (DichVu item in listDichVu)
+                {
+                    if (count > 15)
+                    {
+                        break;
+                    }
+                    SetItemMenu(item, count);
+                    count++;
+                }
+                btnPrevDV.Visible = true;
+                btnPrevDV.Enabled = false;
+                btnNextDV.Visible = true;
+                btnNextDV.Enabled = true;
+                if (listDichVu.Count > 15)
+                {
+                    btnPrevDV.Visible = true;
+                    btnPrevDV.Enabled = true;
+                }
+            }
+        }
+
+        private void btnNextDV_Click(object sender, EventArgs e)
+        {
+            SetEmptyMenu();
+            SetVisibleMenu();
+            List<DichVu> listDichVu = DichVuDAO.Instance.GetNextDichVu((pbImage15.Tag as DichVu).MaDV);
+            if (listDichVu.Count > 0)
+            {
+                int count = 1;
+                foreach (DichVu item in listDichVu)
+                {
+                    if (count > 15)
+                    {
+                        break;
+                    }
+                    SetItemMenu(item, count);
+                    count++;
+                }
+                btnPrevDV.Visible = true;
+                btnPrevDV.Enabled = true;
+                btnNextDV.Visible = true;
+                btnNextDV.Enabled = false;
+                if (listDichVu.Count > 15)
+                {
+                    btnNextDV.Visible = true;
+                    btnNextDV.Enabled = true;
+                }
+            }
+        }
+
+        private void order_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(((PictureBox)sender).Text);
+            string sTen = "";
+            double dGia = 0;
+            bool isUpdate = false;
+            switch (id)
+            {
+                case 1:
+                    sTen = lblName1.Text;
+                    dGia = Convert.ToDouble((Regex.Split(lblGia1.Text.Replace("đ", ""), ":")[1].ToString()));
+                    break;
+                case 2:
+                    sTen = lblName2.Text;
+                    dGia = Convert.ToDouble((Regex.Split(lblGia2.Text.Replace("đ", ""), ":")[1].ToString()));
+                    break;
+                case 3:
+                    sTen = lblName3.Text;
+                    dGia = Convert.ToDouble((Regex.Split(lblGia3.Text.Replace("đ", ""), ":")[1].ToString()));
+                    break;
+                case 4:
+                    sTen = lblName4.Text;
+                    dGia = Convert.ToDouble((Regex.Split(lblGia4.Text.Replace("đ", ""), ":")[1].ToString()));
+                    break;
+                case 5:
+                    sTen = lblName5.Text;
+                    dGia = Convert.ToDouble((Regex.Split(lblGia5.Text.Replace("đ", ""), ":")[1].ToString()));
+                    break;
+                case 6:
+                    sTen = lblName6.Text;
+                    dGia = Convert.ToDouble((Regex.Split(lblGia6.Text.Replace("đ", ""), ":")[1].ToString()));
+                    break;
+                case 7:
+                    sTen = lblName7.Text;
+                    dGia = Convert.ToDouble((Regex.Split(lblGia7.Text.Replace("đ", ""), ":")[1].ToString()));
+                    break;
+                case 8:
+                    sTen = lblName8.Text;
+                    dGia = Convert.ToDouble((Regex.Split(lblGia8.Text.Replace("đ", ""), ":")[1].ToString()));
+                    break;
+                case 9:
+                    sTen = lblName9.Text;
+                    dGia = Convert.ToDouble((Regex.Split(lblGia9.Text.Replace("đ", ""), ":")[1].ToString()));
+                    break;
+                case 10:
+                    sTen = lblName10.Text;
+                    dGia = Convert.ToDouble((Regex.Split(lblGia10.Text.Replace("đ", ""), ":")[1].ToString()));
+                    break;
+                case 11:
+                    sTen = lblName11.Text;
+                    dGia = Convert.ToDouble((Regex.Split(lblGia11.Text.Replace("đ", ""), ":")[1].ToString()));
+                    break;
+                case 12:
+                    sTen = lblName12.Text;
+                    dGia = Convert.ToDouble((Regex.Split(lblGia12.Text.Replace("đ", ""), ":")[1].ToString()));
+                    break;
+                case 13:
+                    sTen = lblName13.Text;
+                    dGia = Convert.ToDouble((Regex.Split(lblGia13.Text.Replace("đ", ""), ":")[1].ToString()));
+                    break;
+                case 14:
+                    sTen = lblName14.Text;
+                    dGia = Convert.ToDouble((Regex.Split(lblGia14.Text.Replace("đ", ""), ":")[1].ToString()));
+                    break;
+                case 15:
+                    sTen = lblName15.Text;
+                    dGia = Convert.ToDouble((Regex.Split(lblGia15.Text.Replace("đ", ""), ":")[1].ToString()));
+                    break;
+            }
+            if (lviHoaDon.Items.Count > 0)
+            {
+                foreach (ListViewItem itm in lviHoaDon.Items)
+                {
+                    if (itm.SubItems[0].Text.Trim() == sTen)
+                    {
+                        itm.SubItems[2].Text = (Convert.ToInt32(itm.SubItems[2].Text) + 1).ToString();
+                        isUpdate = true;
+                    }
+                }
+            }
+            if (isUpdate == false)
+            {
+                ListViewItem item = new ListViewItem(sTen);
+                item.SubItems.Add(dGia.ToString());
+                item.SubItems.Add("1");
+                lviHoaDon.Items.Add(item);
+            }
+            if (txtTongTien.Text != "")
+            {
+                txtTongTien.Text = (Convert.ToInt32(txtTongTien.Text.Replace(",", "")) + dGia).ToString("0,00");
+            }
+            else
+            {
+                txtTongTien.Text = dGia.ToString("0,00");
+            }
+        }
+
+        private void lviHoadon_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            int total = 0;
+            if (lviHoaDon.Items.Count < 1) return;
+            foreach (int i in lviHoaDon.SelectedIndices)
+            {
+                if (i == 0) { MessageBox.Show("Không thể xoá phòng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning); return; } 
+                if (Convert.ToInt32(lviHoaDon.Items[i].SubItems[2].Text) == 1)
+                {
+                    lviHoaDon.Items.Remove(lviHoaDon.Items[i]);
+                }
+                else
+                {
+                    lviHoaDon.Items[i].SubItems[2].Text = (Convert.ToInt32(lviHoaDon.Items[i].SubItems[2].Text) - 1).ToString();
+                }
+            }
+            foreach (ListViewItem item in lviHoaDon.Items)
+            {
+                total = total + Convert.ToInt32(item.SubItems[1].Text) * Convert.ToInt32(item.SubItems[2].Text);
+            }
+            int giamgia = (int)GiamGia.Value;
+            total = total - total * giamgia / 100;
+            txtTongTien.Text = String.Format(culture, "{0:N0}", total);
+        }
+
+        private void thongKeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmBaoCaoThongKe frm = new frmBaoCaoThongKe();
+            frm.ShowDialog();
+        }
+
+        private void GiamGia_ValueChanged(object sender, EventArgs e)
+        {
+            if (lviHoaDon.Items.Count > 0)
+            {
+                decimal total = 0;
+                foreach (ListViewItem item in lviHoaDon.Items)
+                {
+                    total = total + Convert.ToInt32(item.SubItems[1].Text) * Convert.ToInt32(item.SubItems[2].Text);
+                }
+                int giamgia = (int)GiamGia.Value;
+                total = total - total * giamgia / 100;
+                txtTongTien.Text = String.Format(culture, "{0:N0}", total);
+            }
+        }
+
+        private void txtKhachDua_TextChanged(object sender, EventArgs e)
+        {
+            decimal tienKhach;
+            if (decimal.TryParse(txtKhachDua.Text, out tienKhach))
+            {
+                if (tienKhach > 0)
+                {
+                    txtTienThua.Text = String.Format(culture, "{0:N0}", tienKhach - Convert.ToDecimal(txtTongTien.Text));
+                    txtKhachDua.Text = String.Format(culture, "{0:N0}", tienKhach);
+                    txtKhachDua.Select(txtKhachDua.Text.Length, 0);
+                }
+            }
+        }
+
+        private void tcMenu_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tcMenu.SelectedIndex == 0)
+            {
+                ShowPhong();
+            }
+            else if (tcMenu.SelectedIndex == 1)
+            {
+                if (lblPhong.Text == "")
+                {
+                    MessageBox.Show("Vui lòng chọn phòng để order dịch vụ hoặc thanh toán!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+                ShowMenuDichVu();
+            }
+        }
+
+
+
+
+
+
+        // LƯU THÔNG TIN + THANH TOÁN
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            if (lblPhong.Text == "") return;
+            string flag = ((System.Windows.Forms.Button)sender).Text;
+
+            //Gọi tới hàm lưu thông tin
+            //LuuThongTin(flag);
+        }
+        public void LuuThongTin(string flag)
+        {
+            //int stThanhToan = 0; // Trạng thái thanh toán (0:chưa 1: đã thanh toán)
+            //int stPhong = 1; // Trạng thái phòng(Đang sử dụng hoặc trống)
+            //string message = "Lưu thông tin thành công!";
+            //// Nếu nhấn button thanh toán
+            //if (flag == "Thanh toán")
+            //{
+            //    stThanhToan = 1;
+            //    stBan = 0;
+            //    message = "Thanh toán thành công!";
+            //}
+            //string idPhong = (lviHoaDon.Tag as Phong).MaPhong;
+            ////DataTable dt = ThongTinBillDAO.Instance.GetThongTinBill(idBan);
+            //int idBill;
+            //bool updateFlag = false;
+            ////T/hợp xóa dòng đã order
+            //if (dt.Rows.Count > 0)
+            //{
+            //    foreach (DataRow row in dt.Rows)
+            //    {
+            //        foreach (ListViewItem item in lviHoaDon.Items)
+            //        {
+            //            if (row["name"].ToString().Trim() == item.SubItems[0].Text.Trim() && row["size"].ToString().Trim() == item.SubItems[2].Text.Trim())
+            //            {
+            //                break;
+            //            }
+            //            ThongTinBillDAO.Instance.deleteThongTinBill(Convert.ToInt32(row["idBill"]), Convert.ToInt32(row["idMon"]), row["size"].ToString());
+            //        }
+            //    }
+            //}
+            ////Load lại data bill
+            //DataTable data = ThongTinBillDAO.Instance.GetThongTinBill(idBan);
+            //if (data.Rows.Count > 0)
+            //{
+            //    idBill = data.Rows[0].Field<int>("idBill");
+            //    // T/hợp thêm hoặc sửa thông tin order
+            //    foreach (ListViewItem item in lviHoaDon.Items)
+            //    {
+            //        updateFlag = false;
+            //        foreach (DataRow row in data.Rows)
+            //        {
+            //            if (item.SubItems[0].Text.Trim() == row["name"].ToString().Trim() && item.SubItems[2].Text.Trim() == row["size"].ToString().Trim())
+            //            {
+            //                if (item.SubItems[3].Text.Trim() != row["count"].ToString())
+            //                {
+            //                    ThongTinBillDAO.Instance.updateThongTinBill(Convert.ToInt32(row["idBill"]), Convert.ToInt32(row["idMon"]), row["size"].ToString(), Convert.ToInt32(item.SubItems[3].Text));
+            //                }
+            //                updateFlag = true;
+            //                break;
+            //            }
+            //        }
+            //        if (!updateFlag)
+            //        {
+            //            int idMon = MenuDAO.Instance.GetIdMon(item.SubItems[0].Text);
+            //            ThongTinBillDAO.Instance.InsertThongTinBill(idBill, idMon, item.SubItems[2].Text, Convert.ToInt32(item.SubItems[3].Text));
+            //        }
+            //    }
+            //    BillDAO.Instance.updateBill(idBill, stThanhToan, Convert.ToInt32(GiamGia.Value), Convert.ToDecimal(txtTongTien.Text.Replace(",", "")), txtGhiChu.Text);
+            //    TableDAO.Instance.UpdateStatusBan(idBan, stBan);
+            //    MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //}
+            //else
+            //{
+            //    if (lviHoaDon.Items.Count > 0)
+            //    {
+            //        idBill = BillDAO.Instance.GetMaxIDBill() + 1;
+            //        decimal total = 0;
+            //        foreach (ListViewItem item in lviHoaDon.Items)
+            //        {
+            //            total = total + Convert.ToInt32(item.SubItems[1].Text) * Convert.ToInt32(item.SubItems[3].Text);
+            //        }
+            //        int giamgia = (int)GiamGia.Value;
+            //        total = total - total * giamgia / 100;
+            //        txtTongTien.Text = String.Format(culture, "{0:N0}", total);
+            //        BillDAO.Instance.InsertBill(idBill, idBan, userLogin.IDNhanVien, stThanhToan, giamgia, total, txtGhiChu.Text);
+            //        foreach (ListViewItem item in lviHoaDon.Items)
+            //        {
+            //            int idMon = MenuDAO.Instance.GetIdMon(item.SubItems[0].Text);
+            //            ThongTinBillDAO.Instance.InsertThongTinBill(idBill, idMon, item.SubItems[2].Text, Convert.ToInt32(item.SubItems[3].Text));
+            //        }
+            //        TableDAO.Instance.UpdateStatusBan(idBan, stBan);
+            //        MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Mời chọn đồ uống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //        return;
+            //    }
+            //}
+            //if (flag == "Thanh toán")
+            //{
+            //    if (MessageBox.Show("Bạn có muốn in hóa đơn không?", "Thông báo", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
+            //    {
+            //        PaperSize pageSize = new PaperSize();
+            //        pageSize.Width = 302;
+            //        printPreviewDialog1.Document = printDocument1;
+            //        printDocument1.DefaultPageSettings.PaperSize = new System.Drawing.Printing.PaperSize("pz", 302, 600);
+            //        printPreviewDialog1.ShowDialog();
+            //    }
+            //    lviHoaDon.Items.Clear();
+            //    ClearBill();
+            //}
+        }
+
+        //XUẤT HÓA ĐƠN
+        private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            //string shopName = "COFFE UEF";
+            //Font FontHeader = new Font("Time New Roman", 13, FontStyle.Bold);
+            //e.Graphics.DrawString(shopName, FontHeader, Brushes.Black, 90, 30);
+
+            //string add = "141 Điện Biên Phủ, P.15, Q.Bình Thạnh";
+            //Font FontHeader2 = new Font("Time New Roman", 9, FontStyle.Bold);
+            //e.Graphics.DrawString(add, FontHeader2, Brushes.Black, 30, 60);
+
+            //string billName = "HÓA ĐƠN " + lblTable.Text;
+            //e.Graphics.DrawString(billName, FontHeader, Brushes.Black, 80, 90);
+
+            //string timeIn = "Giờ vào:    ";
+            //e.Graphics.DrawString(timeIn, FontHeader2, Brushes.Black, 30, 120);
+
+            //string timeOut = "Giờ ra:    ";
+            //e.Graphics.DrawString(timeOut, FontHeader2, Brushes.Black, 30, 140);
+
+
+            //Font FontDetail = new Font("Time New Roman", 8, FontStyle.Regular);
+            //string header = "Tên hàng" + new string(' ', 30) + "SL" + new string(' ', 5) + "Đơn giá" + new string(' ', 8) + "Thành tiền";
+            //e.Graphics.DrawString(header, FontDetail, Brushes.Black, 5, 160);
+
+            //e.Graphics.DrawLine(new Pen(Color.Black, 1), 5, 180, 295, 180);
+            //int x = 5;
+            //int y = 200;
+            //foreach (ListViewItem item in lviHoaDon.Items)
+            //{
+            //    string name = item.SubItems[0].Text;
+            //    int sl = Convert.ToInt32(item.SubItems[3].Text);
+            //    int dongia = Convert.ToInt32(item.SubItems[1].Text);
+            //    string detail = name + new string(' ', 38 - name.Length) + sl + new string(' ', 7 - sl.ToString().Length) + dongia + new string(' ', 15 - dongia.ToString().Length) + (sl * dongia);
+            //    e.Graphics.DrawString(detail, FontDetail, Brushes.Black, x, y);
+            //    y += 20;
+            //}
+            //e.Graphics.DrawLine(new Pen(Color.Black, 1), 5, y, 295, y);
+
+
+            //Font FontFooter = new Font("Time New Roman", 9, FontStyle.Bold);
+            //string giamgia = "Giảm giá: " + new string(' ', 40) + GiamGia.Text + "%";
+            //e.Graphics.DrawString(giamgia, FontFooter, Brushes.Black, 5, y + 20);
+
+            //string thanhtien = "Tổng tiền: " + new string(' ', 40) + txtTongTien.Text;
+            //e.Graphics.DrawString(thanhtien, FontFooter, Brushes.Black, 5, y + 40);
+
+            //string khachDua = "Khách đưa: " + new string(' ', 40) + txtKhachDua.Text;
+            //e.Graphics.DrawString(khachDua, FontFooter, Brushes.Black, 5, y + 60);
+
+            //string tienThua = "Tiền thừa: " + new string(' ', 40) + txtTienThua.Text;
+            //e.Graphics.DrawString(tienThua, FontFooter, Brushes.Black, 5, y + 80);
         }
     }
 }

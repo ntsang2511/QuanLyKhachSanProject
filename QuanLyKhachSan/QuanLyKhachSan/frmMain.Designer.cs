@@ -55,7 +55,6 @@
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -71,8 +70,8 @@
             this.btnXe = new System.Windows.Forms.Button();
             this.btnGiatLa = new System.Windows.Forms.Button();
             this.tpMenu = new System.Windows.Forms.TabPage();
-            this.btnNextMenu = new System.Windows.Forms.Button();
-            this.btnPrevMenu = new System.Windows.Forms.Button();
+            this.btnNextDV = new System.Windows.Forms.Button();
+            this.btnPrevDV = new System.Windows.Forms.Button();
             this.pnMenu15 = new System.Windows.Forms.Panel();
             this.pbImage15 = new System.Windows.Forms.PictureBox();
             this.lblGia15 = new System.Windows.Forms.Label();
@@ -212,6 +211,7 @@
             this.lblIDPhong2 = new System.Windows.Forms.Label();
             this.lblIDPhong1 = new System.Windows.Forms.Label();
             this.tcMenu = new System.Windows.Forms.TabControl();
+            this.thongKeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnHoaDon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GiamGia)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -349,12 +349,13 @@
             // 
             // btnLuuTam
             // 
-            this.btnLuuTam.Location = new System.Drawing.Point(25, 568);
+            this.btnLuuTam.Location = new System.Drawing.Point(25, 726);
             this.btnLuuTam.Name = "btnLuuTam";
             this.btnLuuTam.Size = new System.Drawing.Size(154, 52);
             this.btnLuuTam.TabIndex = 29;
             this.btnLuuTam.Text = "Lưu thông tin";
             this.btnLuuTam.UseVisualStyleBackColor = true;
+            this.btnLuuTam.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnThanhToan
             // 
@@ -364,6 +365,7 @@
             this.btnThanhToan.TabIndex = 28;
             this.btnThanhToan.Text = "Thanh toán";
             this.btnThanhToan.UseVisualStyleBackColor = true;
+            this.btnThanhToan.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // txtTienThua
             // 
@@ -379,6 +381,7 @@
             this.txtKhachDua.Name = "txtKhachDua";
             this.txtKhachDua.Size = new System.Drawing.Size(154, 26);
             this.txtKhachDua.TabIndex = 26;
+            this.txtKhachDua.TextChanged += new System.EventHandler(this.txtKhachDua_TextChanged);
             // 
             // txtTongTien
             // 
@@ -412,6 +415,7 @@
             this.GiamGia.Name = "GiamGia";
             this.GiamGia.Size = new System.Drawing.Size(54, 26);
             this.GiamGia.TabIndex = 19;
+            this.GiamGia.ValueChanged += new System.EventHandler(this.GiamGia_ValueChanged);
             // 
             // cmbPhongTrong
             // 
@@ -420,6 +424,7 @@
             this.cmbPhongTrong.Name = "cmbPhongTrong";
             this.cmbPhongTrong.Size = new System.Drawing.Size(154, 26);
             this.cmbPhongTrong.TabIndex = 16;
+            this.cmbPhongTrong.Visible = false;
             // 
             // btnChuyenPhong
             // 
@@ -429,6 +434,7 @@
             this.btnChuyenPhong.TabIndex = 13;
             this.btnChuyenPhong.Text = "Chuyển bàn";
             this.btnChuyenPhong.UseVisualStyleBackColor = true;
+            this.btnChuyenPhong.Visible = false;
             // 
             // label32
             // 
@@ -476,8 +482,7 @@
             this.lviHoaDon.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4});
+            this.columnHeader3});
             this.lviHoaDon.Font = new System.Drawing.Font("Comic Sans MS", 10F);
             this.lviHoaDon.HideSelection = false;
             this.lviHoaDon.Location = new System.Drawing.Point(8, 44);
@@ -486,6 +491,7 @@
             this.lviHoaDon.TabIndex = 0;
             this.lviHoaDon.UseCompatibleStateImageBehavior = false;
             this.lviHoaDon.View = System.Windows.Forms.View.Details;
+            this.lviHoaDon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lviHoadon_MouseDoubleClick);
             // 
             // columnHeader1
             // 
@@ -499,13 +505,8 @@
             // 
             // columnHeader3
             // 
-            this.columnHeader3.Text = "Size";
-            this.columnHeader3.Width = 88;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Số lượng";
-            this.columnHeader4.Width = 109;
+            this.columnHeader3.Text = "Số lượng";
+            this.columnHeader3.Width = 109;
             // 
             // printPreviewDialog1
             // 
@@ -517,6 +518,10 @@
             this.printPreviewDialog1.Name = "printPreviewDialog1";
             this.printPreviewDialog1.Visible = false;
             // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
             // menuStrip1
             // 
             this.menuStrip1.Font = new System.Drawing.Font("Comic Sans MS", 10F);
@@ -525,6 +530,7 @@
             this.adminToolStripMenuItem,
             this.datphongToolStripMenuItem,
             this.thanhToanToolStripMenuItem,
+            this.thongKeToolStripMenuItem,
             this.dangXuatToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -560,6 +566,7 @@
             this.thanhToanToolStripMenuItem.Name = "thanhToanToolStripMenuItem";
             this.thanhToanToolStripMenuItem.Size = new System.Drawing.Size(94, 23);
             this.thanhToanToolStripMenuItem.Text = "Thanh Toán";
+            this.thanhToanToolStripMenuItem.Visible = false;
             // 
             // dangXuatToolStripMenuItem
             // 
@@ -635,8 +642,8 @@
             // tpMenu
             // 
             this.tpMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.tpMenu.Controls.Add(this.btnNextMenu);
-            this.tpMenu.Controls.Add(this.btnPrevMenu);
+            this.tpMenu.Controls.Add(this.btnNextDV);
+            this.tpMenu.Controls.Add(this.btnPrevDV);
             this.tpMenu.Controls.Add(this.pnMenu15);
             this.tpMenu.Controls.Add(this.pnMenu14);
             this.tpMenu.Controls.Add(this.pnMenu13);
@@ -659,23 +666,25 @@
             this.tpMenu.TabIndex = 1;
             this.tpMenu.Text = "Menu dịch vụ";
             // 
-            // btnNextMenu
+            // btnNextDV
             // 
-            this.btnNextMenu.Location = new System.Drawing.Point(558, 753);
-            this.btnNextMenu.Name = "btnNextMenu";
-            this.btnNextMenu.Size = new System.Drawing.Size(55, 29);
-            this.btnNextMenu.TabIndex = 118;
-            this.btnNextMenu.Text = "Next";
-            this.btnNextMenu.UseVisualStyleBackColor = true;
+            this.btnNextDV.Location = new System.Drawing.Point(558, 753);
+            this.btnNextDV.Name = "btnNextDV";
+            this.btnNextDV.Size = new System.Drawing.Size(55, 29);
+            this.btnNextDV.TabIndex = 118;
+            this.btnNextDV.Text = "Next";
+            this.btnNextDV.UseVisualStyleBackColor = true;
+            this.btnNextDV.Click += new System.EventHandler(this.btnNextDV_Click);
             // 
-            // btnPrevMenu
+            // btnPrevDV
             // 
-            this.btnPrevMenu.Location = new System.Drawing.Point(494, 753);
-            this.btnPrevMenu.Name = "btnPrevMenu";
-            this.btnPrevMenu.Size = new System.Drawing.Size(55, 29);
-            this.btnPrevMenu.TabIndex = 117;
-            this.btnPrevMenu.Text = "Prev";
-            this.btnPrevMenu.UseVisualStyleBackColor = true;
+            this.btnPrevDV.Location = new System.Drawing.Point(494, 753);
+            this.btnPrevDV.Name = "btnPrevDV";
+            this.btnPrevDV.Size = new System.Drawing.Size(55, 29);
+            this.btnPrevDV.TabIndex = 117;
+            this.btnPrevDV.Text = "Prev";
+            this.btnPrevDV.UseVisualStyleBackColor = true;
+            this.btnPrevDV.Click += new System.EventHandler(this.btnPrevDV_Click);
             // 
             // pnMenu15
             // 
@@ -698,6 +707,7 @@
             this.pbImage15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbImage15.TabIndex = 0;
             this.pbImage15.TabStop = false;
+            this.pbImage15.Click += new System.EventHandler(this.order_Click);
             // 
             // lblGia15
             // 
@@ -775,6 +785,7 @@
             this.pbImage14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbImage14.TabIndex = 0;
             this.pbImage14.TabStop = false;
+            this.pbImage14.Click += new System.EventHandler(this.order_Click);
             // 
             // lblGia14
             // 
@@ -852,6 +863,7 @@
             this.pbImage13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbImage13.TabIndex = 0;
             this.pbImage13.TabStop = false;
+            this.pbImage13.Click += new System.EventHandler(this.order_Click);
             // 
             // lblGia13
             // 
@@ -929,6 +941,7 @@
             this.pbImage12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbImage12.TabIndex = 0;
             this.pbImage12.TabStop = false;
+            this.pbImage12.Click += new System.EventHandler(this.order_Click);
             // 
             // lblGia12
             // 
@@ -1006,6 +1019,7 @@
             this.pbImage11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbImage11.TabIndex = 0;
             this.pbImage11.TabStop = false;
+            this.pbImage11.Click += new System.EventHandler(this.order_Click);
             // 
             // lblGia11
             // 
@@ -1083,6 +1097,7 @@
             this.pbImage10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbImage10.TabIndex = 0;
             this.pbImage10.TabStop = false;
+            this.pbImage10.Click += new System.EventHandler(this.order_Click);
             // 
             // lblGia10
             // 
@@ -1160,6 +1175,7 @@
             this.pbImage9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbImage9.TabIndex = 0;
             this.pbImage9.TabStop = false;
+            this.pbImage9.Click += new System.EventHandler(this.order_Click);
             // 
             // lblGia9
             // 
@@ -1237,6 +1253,7 @@
             this.pbImage8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbImage8.TabIndex = 0;
             this.pbImage8.TabStop = false;
+            this.pbImage8.Click += new System.EventHandler(this.order_Click);
             // 
             // lblGia8
             // 
@@ -1314,6 +1331,7 @@
             this.pbImage7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbImage7.TabIndex = 0;
             this.pbImage7.TabStop = false;
+            this.pbImage7.Click += new System.EventHandler(this.order_Click);
             // 
             // lblGia7
             // 
@@ -1391,6 +1409,7 @@
             this.pbImage6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbImage6.TabIndex = 0;
             this.pbImage6.TabStop = false;
+            this.pbImage6.Click += new System.EventHandler(this.order_Click);
             // 
             // lblGia6
             // 
@@ -1468,6 +1487,7 @@
             this.pbImage5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbImage5.TabIndex = 0;
             this.pbImage5.TabStop = false;
+            this.pbImage5.Click += new System.EventHandler(this.order_Click);
             // 
             // lblGia5
             // 
@@ -1545,6 +1565,7 @@
             this.pbImage4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbImage4.TabIndex = 0;
             this.pbImage4.TabStop = false;
+            this.pbImage4.Click += new System.EventHandler(this.order_Click);
             // 
             // lblGia4
             // 
@@ -1622,6 +1643,7 @@
             this.pbImage3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbImage3.TabIndex = 0;
             this.pbImage3.TabStop = false;
+            this.pbImage3.Click += new System.EventHandler(this.order_Click);
             // 
             // lblGia3
             // 
@@ -1699,6 +1721,7 @@
             this.pbImage2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbImage2.TabIndex = 0;
             this.pbImage2.TabStop = false;
+            this.pbImage2.Click += new System.EventHandler(this.order_Click);
             // 
             // lblGia2
             // 
@@ -1776,6 +1799,7 @@
             this.pbImage1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbImage1.TabIndex = 0;
             this.pbImage1.TabStop = false;
+            this.pbImage1.Click += new System.EventHandler(this.order_Click);
             // 
             // lblGia1
             // 
@@ -2205,6 +2229,14 @@
             this.tcMenu.SelectedIndex = 0;
             this.tcMenu.Size = new System.Drawing.Size(1118, 819);
             this.tcMenu.TabIndex = 10;
+            this.tcMenu.SelectedIndexChanged += new System.EventHandler(this.tcMenu_SelectedIndexChanged);
+            // 
+            // thongKeToolStripMenuItem
+            // 
+            this.thongKeToolStripMenuItem.Name = "thongKeToolStripMenuItem";
+            this.thongKeToolStripMenuItem.Size = new System.Drawing.Size(80, 23);
+            this.thongKeToolStripMenuItem.Text = "Thống kê";
+            this.thongKeToolStripMenuItem.Click += new System.EventHandler(this.thongKeToolStripMenuItem_Click);
             // 
             // frmMain
             // 
@@ -2306,7 +2338,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
         private System.Drawing.Printing.PrintDocument printDocument1;
@@ -2327,8 +2358,8 @@
         private System.Windows.Forms.Button btnXe;
         private System.Windows.Forms.Button btnGiatLa;
         private System.Windows.Forms.TabPage tpMenu;
-        private System.Windows.Forms.Button btnNextMenu;
-        private System.Windows.Forms.Button btnPrevMenu;
+        private System.Windows.Forms.Button btnNextDV;
+        private System.Windows.Forms.Button btnPrevDV;
         private System.Windows.Forms.Panel pnMenu15;
         private System.Windows.Forms.PictureBox pbImage15;
         private System.Windows.Forms.Label lblGia15;
@@ -2469,5 +2500,6 @@
         private System.Windows.Forms.Label lblIDPhong1;
         private System.Windows.Forms.TabControl tcMenu;
         private System.Windows.Forms.ToolStripMenuItem accountToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem thongKeToolStripMenuItem;
     }
 }

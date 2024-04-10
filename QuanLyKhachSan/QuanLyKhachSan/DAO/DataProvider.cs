@@ -11,8 +11,8 @@ namespace QuanLyKhachSan.DAO
     internal class DataProvider
     {
         private static DataProvider instance;
-        //private string connectionStr = @"Data Source=DESKTOP-GPDV1K7\NGOC_HAO;Initial Catalog=QuanLyKhachSan;Integrated Security=True";
-        private string connectionStr = @"Data Source=SANG-ADVICE\SQLEXPRESS;Initial Catalog=QuanLyKhachSan;Integrated Security=True";
+        private string connectionStr = @"Data Source=DESKTOP-GPDV1K7\NGOC_HAO;Initial Catalog=QuanLyKhachSan;Integrated Security=True";
+        //private string connectionStr = @"Data Source=SANG-ADVICE\SQLEXPRESS;Initial Catalog=QuanLyKhachSan;Integrated Security=True";
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {
             DataTable data = new DataTable();

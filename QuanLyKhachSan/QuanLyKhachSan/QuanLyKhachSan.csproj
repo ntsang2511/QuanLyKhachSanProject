@@ -54,8 +54,10 @@
     <Compile Include="DAO\AccountDAO.cs" />
     <Compile Include="DAO\BaoCaoThongKeDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="DAO\DichVuDAO.cs" />
     <Compile Include="DAO\ExportToExcel.cs" />
     <Compile Include="DAO\PhongDAO.cs" />
+    <Compile Include="DTO\DichVu.cs" />
     <Compile Include="DTO\Phong.cs" />
     <Compile Include="frmBaoCaoThongKe.cs">
       <SubType>Form</SubType>

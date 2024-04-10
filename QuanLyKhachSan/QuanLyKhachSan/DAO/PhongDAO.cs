@@ -54,13 +54,22 @@ namespace QuanLyKhachSan.DAO
             string query = "select MAPHONG,LOAIPHONG,GIAPHONG,SONGUOI,TINHTRANG from PHONG where MAPHONG < '" + id + "' order by id ";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
-            foreach (DataRow item in data.Rows)
-            {
-                Phong phong = new Phong(item);
-                listPhong.Add(phong);
-            }
-
             return listPhong;
+        }
+
+        public DataTable GetTTDatPhong(string id)
+        {
+            string query = "select p.MAPHONG, P.GIAPHONG, DP.MADP, DP.NGAYDEN, DP.NGAYTRA from PHONG P INNER JOIN DATPHONG DP ON DP.MAPHONG = P.MAPHONG AND DP.TRANGTHAI = 'FALSE' where P.MAPHONG = '" + id + "'";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            return data;
+        }
+        public DataTable GetTTDVPhong(string id)
+        {
+            string query = "select TT.MADV, DV.TENDV, TT.SOLUONG, DV.DONGIA from THANHTOAN TT INNER JOIN DICHVU DV ON TT.MADV = DV.MADV where TT.MADP = '" + id + "'";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            return data;
         }
     }
 }
